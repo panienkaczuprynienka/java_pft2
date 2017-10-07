@@ -22,6 +22,7 @@ public class PointTests {
     Assert.assertTrue(p1.distance(p3)>10.0);
 
 
+
   }
 }
 
