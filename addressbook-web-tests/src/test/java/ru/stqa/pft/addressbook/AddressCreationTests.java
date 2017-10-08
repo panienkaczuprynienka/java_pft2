@@ -17,7 +17,7 @@ public class AddressCreationTests {
   public void setUp() throws Exception {
     wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    wd.get("http://localhost/addressbook/addressbook/index.php");
+    wd.get("http://localhost:8080/addressbook/addressbook/");
     login("admin", "secret");
   }
 
