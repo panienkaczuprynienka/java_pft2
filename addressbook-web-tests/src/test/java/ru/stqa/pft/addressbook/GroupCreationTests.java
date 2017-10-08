@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook;
 
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -16,10 +17,11 @@ import static org.openqa.selenium.OutputType.*;
 
 public class GroupCreationTests {
     FirefoxDriver wd;
+
     
     @BeforeMethod
     public void setUp() throws Exception {
-        wd = new FirefoxDriver();
+      wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
     
