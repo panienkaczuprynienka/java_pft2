@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.appmanager;
 
+import org.omg.CosNaming.NamingContextExtPackage.AddressHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -8,7 +9,7 @@ import ru.stqa.pft.addressbook.model.AddressData;
 
 import java.util.concurrent.TimeUnit;
 
-public class ApplicationManager {
+public class ApplicationManager extends AddressHelper {
   FirefoxDriver wd;
 
   private SessionHelper sessionHelper;
@@ -23,7 +24,6 @@ public class ApplicationManager {
       return false;
     }
   }
-
 
   public void init() {
     wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
@@ -89,11 +89,13 @@ public class ApplicationManager {
   }
 
   public void goToAddressPage() {
+
     wd.findElement(By.linkText("add new")).click();
   }
 
   public void deleteSelectedAddress() {
-      wd.findElement(By.xpath("//div[@id='content']/form[2]/input[2]")).click();
+
+    wd.findElement(By.xpath("//div[@id='content']/form[2]/input[2]")).click();
   }
 
   public void editSelectedAddress() {
