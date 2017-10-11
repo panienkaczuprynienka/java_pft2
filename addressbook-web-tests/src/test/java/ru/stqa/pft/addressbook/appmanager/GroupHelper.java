@@ -7,14 +7,17 @@ import ru.stqa.pft.addressbook.model.GroupData;
 public class GroupHelper extends HelperBase {
 
   public GroupHelper(FirefoxDriver wd) {
+
     super(wd);
   }
 
   public void returnToGroupPage() {
+
     click(By.linkText("group page"));
   }
 
   public void submitGroupCreation() {
+
     click(By.name("submit"));
   }
 

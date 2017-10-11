@@ -5,9 +5,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.AddressData;
 
 public class AddressHelper extends HelperBase{
-  private FirefoxDriver wd;
 
   public AddressHelper(FirefoxDriver wd) {
+    
     super(wd);
   }
 

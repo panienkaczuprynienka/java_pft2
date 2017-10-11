@@ -10,8 +10,8 @@ public class AddressCreationTests extends TestBase {
   @Test
   public void testAddressCreation() {
 
-    app.goToAddressPage();
-    app.getAddressHelper().fillAddressForm(new AddressData("Lukasz", "Lotysz", "l.lotysz@wp.pl"));
+    app.getNavigationHelper().goToAddressPage();
+    app.getAddressHelper().fillAddressForm(new AddressData("Jolka", "Jolanta", "j.jolanta@wp.pl"));
     app.getAddressHelper().submitAddressForm();
     app.getAddressHelper().goToHomePage();
   }

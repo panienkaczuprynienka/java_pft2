@@ -73,7 +73,4 @@ public class ApplicationManager {
     return navigationHelper;
   }
 
-  public void goToAddressPage() {
-    navigationHelper.goToAddressPage();
-  }
 }
