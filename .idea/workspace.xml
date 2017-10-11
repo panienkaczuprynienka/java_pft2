@@ -87,7 +87,7 @@
       <file leaf-file-name="AddressHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/AddressHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
+            <state relative-caret-position="731">
               <caret line="43" column="70" lean-forward="true" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -119,8 +119,8 @@
       <file leaf-file-name="AddressDeletionTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/AddressDeletionTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+            <state relative-caret-position="204">
+              <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -1163,26 +1163,11 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AddressCreationTests - 2017.10.11 at 08h 00m 39s.xml">
-      <configuration name="AddressCreationTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AddressCreationTests - 2017.10.11 at 08h 11m 05s.xml">
-      <configuration name="AddressCreationTests" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="AddressCreationTests - 2017.10.11 at 10h 27m 07s.xml">
       <configuration name="AddressCreationTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddressDeletionTests - 2017.10.11 at 08h 02m 53s.xml">
-      <configuration name="AddressDeletionTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AddressDeletionTests - 2017.10.11 at 08h 09m 22s.xml">
-      <configuration name="AddressDeletionTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AddressDeletionTests - 2017.10.11 at 08h 28m 07s.xml">
-      <configuration name="AddressDeletionTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AddressDeletionTests - 2017.10.11 at 08h 42m 55s.xml">
-      <configuration name="AddressDeletionTests" configurationId="TestNG" />
+    <history-entry file="AddressCreationTests - 2017.10.11 at 10h 33m 04s.xml">
+      <configuration name="AddressCreationTests" configurationId="TestNG" />
     </history-entry>
     <history-entry file="AddressDeletionTests - 2017.10.11 at 10h 20m 30s.xml">
       <configuration name="AddressDeletionTests" configurationId="TestNG" />
@@ -1192,6 +1177,21 @@
     </history-entry>
     <history-entry file="AddressDeletionTests - 2017.10.11 at 10h 28m 22s.xml">
       <configuration name="AddressDeletionTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="AddressDeletionTests - 2017.10.11 at 10h 29m 42s.xml">
+      <configuration name="AddressDeletionTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="AddressDeletionTests - 2017.10.11 at 10h 31m 25s.xml">
+      <configuration name="AddressDeletionTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="AddressDeletionTests - 2017.10.11 at 10h 33m 37s.xml">
+      <configuration name="AddressDeletionTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="GroupCreationTests - 2017.10.11 at 10h 31m 51s.xml">
+      <configuration name="GroupCreationTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="GroupDeletionTests - 2017.10.11 at 10h 32m 32s.xml">
+      <configuration name="GroupDeletionTests" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -1605,34 +1605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/ApplicationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-352">
-          <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/AddressHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="43" column="70" lean-forward="true" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#1047#1048#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/GroupDeletionTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1657,10 +1629,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/AddressHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="70" lean-forward="true" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#396#397#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#1047#1048#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/ApplicationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352">
+          <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/AddressDeletionTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        <state relative-caret-position="204">
+          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
           <folding />
         </state>
       </provider>

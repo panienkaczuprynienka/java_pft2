@@ -10,7 +10,7 @@ public class AddressDeletionTests extends TestBase {
        // app.getNavigationHelper().goToAddressPage();
         app.getAddressHelper().editSelectedAddress();
         app.getAddressHelper().deleteSelectedAddress();
-        app.getAddressHelper().goToHomePage();
+        //app.getAddressHelper().goToHomePage();
     }
 
 
