@@ -7,7 +7,7 @@ import ru.stqa.pft.addressbook.model.AddressData;
 public class AddressHelper extends HelperBase{
 
   public AddressHelper(FirefoxDriver wd) {
-    
+
     super(wd);
   }
 
@@ -41,6 +41,6 @@ public class AddressHelper extends HelperBase{
   }
 
   public void editSelectedAddress() {
-    click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+    click(By.xpath("//tr[@name='entry'][1]//td[@class='center'][3]"));
   }
 }
