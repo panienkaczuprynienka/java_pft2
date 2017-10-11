@@ -43,4 +43,8 @@ public class AddressHelper extends HelperBase{
   public void editSelectedAddress() {
     click(By.xpath("//tr[@name='entry'][1]//td[@class='center'][3]"));
   }
+
+  public void submitAddressModification() {
+    click(By.xpath("//div[@id='content']/form[1]/input[22]"));
+  }
 }
