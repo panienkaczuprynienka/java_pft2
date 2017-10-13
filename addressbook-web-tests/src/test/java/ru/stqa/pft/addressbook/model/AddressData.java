@@ -4,11 +4,13 @@ public class AddressData {
   private final String firstname;
   private final String lastname;
   private final String address;
+  private String group;
 
-  public AddressData(String firstname, String lastname, String address) {
+  public AddressData(String firstname, String lastname, String address, String group) {
     this.firstname = firstname;
     this.lastname = lastname;
     this.address = address;
+    this.group = group;
   }
 
   public String getFirstname() {
@@ -22,4 +24,6 @@ public class AddressData {
   public String getAddress() {
     return address;
   }
+
+  public String getGroup() { return group; }
 }

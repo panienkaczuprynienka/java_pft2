@@ -1,11 +1,14 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.AddressData;
 
-public class AddressHelper extends HelperBase{
+public class AddressHelper extends HelperBase {
 
   public AddressHelper(WebDriver wd) {
 
@@ -24,10 +27,17 @@ public class AddressHelper extends HelperBase{
     wd.findElement(locator).click();
   }
 
-  public void fillAddressForm(AddressData addressData) {
+  public void fillAddressForm(AddressData addressData, boolean creation) {
     type(By.name("firstname"), addressData.getFirstname());
     type(By.name("lastname"), addressData.getLastname());
     type(By.name("address"), addressData.getAddress());
+
+    if (creation) {
+      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(addressData.getGroup());
+    } else {
+      Assert.assertFalse(isElementPresent(By.name("new_group")));
+
+    }
   }
 
 
