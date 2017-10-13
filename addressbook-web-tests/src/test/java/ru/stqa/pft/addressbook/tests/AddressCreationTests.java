@@ -11,7 +11,7 @@ public class AddressCreationTests extends TestBase {
   public void testAddressCreation() {
 
     app.getNavigationHelper().goToAddressPage();
-    app.getAddressHelper().fillAddressForm(new AddressData("Jolka", "Jolanta", "j.jolanta@wp.pl"));
+    app.getAddressHelper().fillAddressForm(new AddressData("Ewa", "Farna", "ewa.farna@wp.pl"));
     app.getAddressHelper().submitAddressForm();
     app.getAddressHelper().goToHomePage();
   }

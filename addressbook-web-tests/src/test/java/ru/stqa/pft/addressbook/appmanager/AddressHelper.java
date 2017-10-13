@@ -30,11 +30,6 @@ public class AddressHelper extends HelperBase{
     type(By.name("address"), addressData.getAddress());
   }
 
-  protected void type(By locator, String text) {
-    click(locator);
-    wd.findElement(locator).clear();
-    wd.findElement(locator).sendKeys(text);
-  }
 
   public void deleteSelectedAddress() {
 
