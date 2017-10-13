@@ -2,21 +2,30 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-  FirefoxDriver wd;
+  WebDriver wd;
 
 
   private SessionHelper sessionHelper;
-  private  NavigationHelper navigationHelper;
-  private  GroupHelper groupHelper;
+  private NavigationHelper navigationHelper;
+  private GroupHelper groupHelper;
   private AddressHelper addressHelper;
+  private String browser;
 
-   public static boolean isAlertPresent(FirefoxDriver wd) {
+  public ApplicationManager(String browser) {
+    this.browser = browser;
+  }
+
+  public static boolean isAlertPresent(FirefoxDriver wd) {
     try {
       wd.switchTo().alert();
       return true;
@@ -26,7 +35,14 @@ public class ApplicationManager {
   }
 
   public void init() {
-    wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
+    if (browser == BrowserType.FIREFOX) {
+      wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
+    } else if (browser == BrowserType.CHROME){
+      wd = new ChromeDriver();
+    } else if (browser == BrowserType.IE) {
+      wd = new InternetExplorerDriver();
+    }
+
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("http://localhost:8080/addressbook/addressbook/");
     groupHelper = new GroupHelper(wd);
@@ -47,22 +63,22 @@ public class ApplicationManager {
   }
 
   public void login(String username, String password) {
-   wd.findElement(By.name("pass")).click();
-   wd.findElement(By.name("pass")).sendKeys("\\undefined");
-   wd.findElement(By.name("user")).click();
-   wd.findElement(By.name("user")).clear();
-   wd.findElement(By.name("user")).sendKeys();
-   wd.findElement(By.name("pass")).click();
-   wd.findElement(By.name("pass")).clear();
-   wd.findElement(By.name("pass")).sendKeys();
-   wd.findElement(By.name("user")).click();
-   wd.findElement(By.name("user")).clear();
-   wd.findElement(By.name("user")).sendKeys(username);
-   wd.findElement(By.id("LoginForm")).click();
-   wd.findElement(By.name("pass")).click();
-   wd.findElement(By.name("pass")).clear();
-   wd.findElement(By.name("pass")).sendKeys(password);
-   wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+    wd.findElement(By.name("pass")).click();
+    wd.findElement(By.name("pass")).sendKeys("\\undefined");
+    wd.findElement(By.name("user")).click();
+    wd.findElement(By.name("user")).clear();
+    wd.findElement(By.name("user")).sendKeys();
+    wd.findElement(By.name("pass")).click();
+    wd.findElement(By.name("pass")).clear();
+    wd.findElement(By.name("pass")).sendKeys();
+    wd.findElement(By.name("user")).click();
+    wd.findElement(By.name("user")).clear();
+    wd.findElement(By.name("user")).sendKeys(username);
+    wd.findElement(By.id("LoginForm")).click();
+    wd.findElement(By.name("pass")).click();
+    wd.findElement(By.name("pass")).clear();
+    wd.findElement(By.name("pass")).sendKeys(password);
+    wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
   }
 
   public AddressHelper getAddressHelper() {
