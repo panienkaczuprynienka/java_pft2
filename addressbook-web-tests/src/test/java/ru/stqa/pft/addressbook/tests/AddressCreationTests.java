@@ -9,11 +9,11 @@ public class AddressCreationTests extends TestBase {
 
   @Test
   public void testAddressCreation() {
-
-    app.getNavigationHelper().goToAddressPage();
+    app.getNavigationHelper().goToHomePage();
+    app.getAddressHelper().initAddressCreation();
     app.getAddressHelper().fillAddressForm(new AddressData("Ola", "Sledz", "ola.sledz@wp.pl", "Ladna"), true);
     app.getAddressHelper().submitAddressForm();
-    app.getAddressHelper().goToHomePage();
+    app.getAddressHelper().returnToHomePage();
   }
 }
 

@@ -15,12 +15,17 @@ public class AddressHelper extends HelperBase {
     super(wd);
   }
 
-  public void goToHomePage() {
+  public void returnToHomePage() {
     click(By.linkText("home page"));
   }
 
   public void submitAddressForm() {
     click(By.name("submit"));
+  }
+
+  public void initAddressCreation() {
+
+    click(By.linkText("add new"));
   }
 
   protected void click(By locator) {
