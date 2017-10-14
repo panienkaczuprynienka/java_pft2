@@ -62,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddressDeletionTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddressDeletionTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/AddressDeletionTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -94,15 +94,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavigationHelper.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NavigationHelper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/NavigationHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="e#331#332#0" expanded="true" />
-                <element signature="e#367#368#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="322">
+              <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -733,9 +730,9 @@
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/HelperBase.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/AddressHelper.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/AddressCreationTests.java" />
-        <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/NavigationHelper.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/AddressModificationTests.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/AddressDeletionTests.java" />
+        <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/NavigationHelper.java" />
       </list>
     </option>
   </component>
@@ -1165,9 +1162,9 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.AddressModificationTests" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.GroupCreationTests" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.AddressDeletionTests" />
+      <item index="0" class="java.lang.String" itemvalue="TestNG.AddressDeletionTests" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.AddressModificationTests" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.GroupCreationTests" />
       <item index="3" class="java.lang.String" itemvalue="TestNG.GroupDeletionTests" />
       <item index="4" class="java.lang.String" itemvalue="TestNG.GroupModificationTests" />
     </list>
@@ -1195,34 +1192,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AddressCreationTests - 2017.10.14 at 11h 39m 20s.xml">
+    <history-entry file="AddressCreationTests - 2017.10.14 at 12h 12m 37s.xml">
       <configuration name="AddressCreationTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddressCreationTests - 2017.10.14 at 11h 42m 58s.xml">
-      <configuration name="AddressCreationTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AddressDeletionTests - 2017.10.14 at 11h 40m 13s.xml">
-      <configuration name="AddressDeletionTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AddressDeletionTests - 2017.10.14 at 11h 40m 49s.xml">
-      <configuration name="AddressDeletionTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AddressDeletionTests - 2017.10.14 at 11h 42m 35s.xml">
-      <configuration name="AddressDeletionTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AddressDeletionTests - 2017.10.14 at 11h 43m 11s.xml">
+    <history-entry file="AddressDeletionTests - 2017.10.14 at 12h 12m 53s.xml">
       <configuration name="AddressDeletionTests" configurationId="TestNG" />
     </history-entry>
     <history-entry file="AddressModificationTests - 2017.10.14 at 11h 43m 27s.xml">
       <configuration name="AddressModificationTests" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="AddressModificationTests - 2017.10.14 at 12h 13m 08s.xml">
+      <configuration name="AddressModificationTests" configurationId="TestNG" />
+    </history-entry>
     <history-entry file="GroupCreationTests - 2017.10.14 at 11h 43m 42s.xml">
+      <configuration name="GroupCreationTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="GroupCreationTests - 2017.10.14 at 12h 13m 28s.xml">
       <configuration name="GroupCreationTests" configurationId="TestNG" />
     </history-entry>
     <history-entry file="GroupDeletionTests - 2017.10.14 at 11h 43m 58s.xml">
       <configuration name="GroupDeletionTests" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="GroupDeletionTests - 2017.10.14 at 12h 13m 43s.xml">
+      <configuration name="GroupDeletionTests" configurationId="TestNG" />
+    </history-entry>
     <history-entry file="GroupModificationTests - 2017.10.14 at 11h 44m 12s.xml">
+      <configuration name="GroupModificationTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="GroupModificationTests - 2017.10.14 at 12h 13m 57s.xml">
       <configuration name="GroupModificationTests" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -1632,17 +1629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/NavigationHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#367#368#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/AddressCreationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1673,6 +1659,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/NavigationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
           <folding />
         </state>
       </provider>
