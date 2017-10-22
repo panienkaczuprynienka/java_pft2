@@ -69,4 +69,8 @@ public class AddressHelper extends HelperBase {
   public boolean isThereAnAddress() {
     return isElementPresent(By.name("selected[]"));
   }
+
+  public int getAddressCount() {
+   return wd.findElements(By.name("selected[]")).size();
+  }
 }
