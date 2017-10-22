@@ -45,12 +45,6 @@ public class AddressHelper extends HelperBase {
     }
   }
 
-
-  public void deleteSelectedAddress() {
-
-    click(By.xpath("//div[@id='content']/form[2]/input[2]"));
-  }
-
   public void editSelectedAddress() {
     click(By.xpath("//tr[@name='entry'][1]//td[@class='center'][3]"));
   }
@@ -72,5 +66,17 @@ public class AddressHelper extends HelperBase {
 
   public int getAddressCount() {
    return wd.findElements(By.name("selected[]")).size();
+  }
+
+  public void selectAddress(int index) {
+    wd.findElements(By.name("selected[]")).get(index).click();
+  }
+
+  public void deleteAddress() {
+    click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+  }
+
+  public void okAlert() {
+    wd.switchTo().alert().accept();
   }
 }

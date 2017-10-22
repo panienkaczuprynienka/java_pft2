@@ -14,8 +14,9 @@ public class AddressDeletionTests extends TestBase {
           app.getAddressHelper().createAddress((new AddressData("Zdzislawa", "Sledz", "z.s@wp.pl", "jep")), true);
         }
     int before = app.getAddressHelper().getAddressCount();
-    app.getAddressHelper().editSelectedAddress();
-    app.getAddressHelper().deleteSelectedAddress();
+    app.getAddressHelper().selectAddress(before-1);
+    app.getAddressHelper().deleteAddress();
+    app.getAddressHelper().okAlert();
     app.getNavigationHelper().goToHomePage();
     int after = app.getAddressHelper().getAddressCount();
     Assert.assertEquals(after, before-1);

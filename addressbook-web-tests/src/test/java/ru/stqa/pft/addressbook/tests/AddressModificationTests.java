@@ -14,6 +14,8 @@ public void testAddressModification(){
     app.getAddressHelper().createAddress((new AddressData("Zdzislawa", "Sledz", "z.s@wp.pl", "jep")), true);
   }
   int before = app.getAddressHelper().getAddressCount();
+  app.getAddressHelper().selectAddress(before-1);
+  //tutaj edytuje się i tak pierwszy z góry a nie wybrany metodą selectAddress
   app.getAddressHelper().editSelectedAddress();
   app.getAddressHelper().fillAddressForm(new AddressData("Sylwia", null, "hops@gmail.com",null), false);
   app.getAddressHelper().submitAddressModification();

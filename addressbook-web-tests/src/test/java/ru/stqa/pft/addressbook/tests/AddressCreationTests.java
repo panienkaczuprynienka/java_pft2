@@ -11,7 +11,7 @@ public class AddressCreationTests extends TestBase {
   public void testAddressCreation() {
     app.getNavigationHelper().goToHomePage();
     int before = app.getAddressHelper().getAddressCount();
-    app.getAddressHelper().createAddress((new AddressData("Ola", "Sledz", "ola.sledz@wp.pl", "jep")), true);
+    app.getAddressHelper().createAddress((new AddressData("hola", "Sledz", "ola.sledz@wp.pl", "jep")), true);
     int after = app.getAddressHelper().getAddressCount();
     Assert.assertEquals(after, before+1);
   }
