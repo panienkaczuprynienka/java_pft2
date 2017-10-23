@@ -23,6 +23,9 @@ public class AddressDeletionTests extends TestBase {
     List<AddressData> after = app.getAddressHelper().getAddressList();
     Assert.assertEquals(after.size(), before.size()-1);
 
+    before.remove(before.size()-1);
+    Assert.assertEquals(before, after);
+
   }
 
 }
