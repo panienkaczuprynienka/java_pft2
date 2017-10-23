@@ -4,16 +4,18 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 
+import java.util.List;
+
 public class AddressCreationTests extends TestBase {
 
 
   @Test
   public void testAddressCreation() {
     app.getNavigationHelper().goToHomePage();
-    int before = app.getAddressHelper().getAddressCount();
-    app.getAddressHelper().createAddress((new AddressData("hola", "Sledz", "ola.sledz@wp.pl", "jep")), true);
-    int after = app.getAddressHelper().getAddressCount();
-    Assert.assertEquals(after, before+1);
+    List<AddressData> before = app.getAddressHelper().getAddressList();
+    app.getAddressHelper().createAddress((new AddressData("ewa", "luka", "el@wp.pl", "jep")), true);
+    List<AddressData> after = app.getAddressHelper().getAddressList();
+    Assert.assertEquals(after.size(), before.size()+1);
   }
 }
 

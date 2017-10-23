@@ -3,10 +3,14 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.AddressData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddressHelper extends HelperBase {
 
@@ -80,4 +84,18 @@ public class AddressHelper extends HelperBase {
   public void okAlert() {
     wd.switchTo().alert().accept();
   }
+
+  public List<AddressData> getAddressList() {
+    List<AddressData> addresses = new ArrayList<AddressData>();
+    List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
+    for (WebElement element : elements){
+      String name = element.getText();
+      String lastName = element.getText();
+
+      AddressData address = new AddressData(name, lastName, null, null);
+      addresses.add(address);
+    }
+    return addresses;
+  }
 }
+

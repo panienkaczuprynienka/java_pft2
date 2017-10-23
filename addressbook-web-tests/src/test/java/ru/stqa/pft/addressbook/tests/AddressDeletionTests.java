@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 
+import java.util.List;
+
 public class AddressDeletionTests extends TestBase {
 
 
@@ -13,13 +15,13 @@ public class AddressDeletionTests extends TestBase {
         if (!app.getAddressHelper().isThereAnAddress()){
           app.getAddressHelper().createAddress((new AddressData("Zdzislawa", "Sledz", "z.s@wp.pl", "jep")), true);
         }
-    int before = app.getAddressHelper().getAddressCount();
-    app.getAddressHelper().selectAddress(before-1);
+    List<AddressData> before = app.getAddressHelper().getAddressList();
+    app.getAddressHelper().selectAddress(before.size()-1);
     app.getAddressHelper().deleteAddress();
     app.getAddressHelper().okAlert();
     app.getNavigationHelper().goToHomePage();
-    int after = app.getAddressHelper().getAddressCount();
-    Assert.assertEquals(after, before-1);
+    List<AddressData> after = app.getAddressHelper().getAddressList();
+    Assert.assertEquals(after, before.size()-1);
   }
 
 
