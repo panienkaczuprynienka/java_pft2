@@ -45,8 +45,9 @@ public class AddressHelper extends HelperBase {
     }
   }
 
-  public void editSelectedAddress() {
-    click(By.xpath("//tr[@name='entry'][1]//td[@class='center'][3]"));
+  public void editSelectedAddress(int index) {
+    //click(By.xpath("//tr[@name='entry'][1]//td[@class='center'][3]"));
+    wd.findElements(By.cssSelector("a[href^='edit.php']")).get(index).click();
   }
 
   public void submitAddressModification() {
