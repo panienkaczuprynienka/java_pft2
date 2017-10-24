@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 
+import java.util.HashSet;
 import java.util.List;
 
 public class AddressModificationTests extends TestBase {
@@ -18,10 +19,15 @@ public void testAddressModification(){
   List<AddressData> before = app.getAddressHelper().getAddressList();
   app.getAddressHelper().selectAddress(before.size()-1);
   app.getAddressHelper().editSelectedAddress(before.size()-1);
-  app.getAddressHelper().fillAddressForm(new AddressData("Hulio", "Ljulio", "hl@gmail.com",null), false);
+  AddressData address = new AddressData("Genowefa", "Srula", "gsrula@gmail.com",null);
+  app.getAddressHelper().fillAddressForm(address, false);
   app.getAddressHelper().submitAddressModification();
   app.getAddressHelper().returnToHomePage();
   List<AddressData> after = app.getAddressHelper().getAddressList();
   Assert.assertEquals(after.size(), before.size());
+
+  before.remove(before.size()-1);
+  before.add(address);
+  Assert.assertEquals(new HashSet<Object>(before), new HashSet<Object> (after));
 }
 }

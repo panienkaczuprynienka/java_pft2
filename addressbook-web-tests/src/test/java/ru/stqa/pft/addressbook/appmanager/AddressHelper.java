@@ -45,7 +45,6 @@ public class AddressHelper extends HelperBase {
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(addressData.getGroup());
     } else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
-
     }
   }
 
@@ -87,12 +86,12 @@ public class AddressHelper extends HelperBase {
 
   public List<AddressData> getAddressList() {
     List<AddressData> addresses = new ArrayList<AddressData>();
-    List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
+    List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']"));
     for (WebElement element : elements){
-      String name = element.getText();
-      String lastName = element.getText();
+      String firstname = element.findElement(By.xpath(".//td[2]")).getText();
+      String lastname = element.findElement(By.xpath(".//td[3]")).getText();
 
-      AddressData address = new AddressData(name, lastName, null, null);
+      AddressData address = new AddressData(firstname, lastname, null, null);
       addresses.add(address);
     }
     return addresses;
