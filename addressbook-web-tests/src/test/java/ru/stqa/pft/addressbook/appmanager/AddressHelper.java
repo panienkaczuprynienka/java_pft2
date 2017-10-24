@@ -50,7 +50,7 @@ public class AddressHelper extends HelperBase {
 
   public void editSelectedAddress(int index) {
     //click(By.xpath("//tr[@name='entry'][1]//td[@class='center'][3]"));
-    wd.findElements(By.cssSelector("a[href^='edit.php']")).get(index).click();
+    wd.findElements(By.cssSelector("a[href^='edit.php']")).get(index+1).click();
   }
 
   public void submitAddressModification() {
@@ -86,10 +86,10 @@ public class AddressHelper extends HelperBase {
 
   public List<AddressData> getAddressList() {
     List<AddressData> addresses = new ArrayList<AddressData>();
-    List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']"));
+    List<WebElement> elements = wd.findElements(By.xpath(".//tr[@name='entry']"));
     for (WebElement element : elements){
-      String firstname = element.findElement(By.xpath(".//td[2]")).getText();
-      String lastname = element.findElement(By.xpath(".//td[3]")).getText();
+      String firstname = element.findElement(By.xpath(".//td[3]")).getText();
+      String lastname = element.findElement(By.xpath(".//td[2]")).getText();
 
       AddressData address = new AddressData(firstname, lastname, null, null);
       addresses.add(address);

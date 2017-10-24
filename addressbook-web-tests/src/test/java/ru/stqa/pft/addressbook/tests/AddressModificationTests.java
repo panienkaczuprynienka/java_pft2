@@ -19,7 +19,7 @@ public void testAddressModification(){
   List<AddressData> before = app.getAddressHelper().getAddressList();
   app.getAddressHelper().selectAddress(before.size()-1);
   app.getAddressHelper().editSelectedAddress(before.size()-1);
-  AddressData address = new AddressData("Genowefa", "Srula", "gsrula@gmail.com",null);
+  AddressData address = new AddressData("imie", "nazwisko", "imienazw@gmail.com",null);
   app.getAddressHelper().fillAddressForm(address, false);
   app.getAddressHelper().submitAddressModification();
   app.getAddressHelper().returnToHomePage();
