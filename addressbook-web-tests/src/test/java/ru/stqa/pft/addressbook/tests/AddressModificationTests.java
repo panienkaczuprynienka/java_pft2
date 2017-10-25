@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public void testAddressModification(){
   List<AddressData> before = app.getAddressHelper().getAddressList();
   app.getAddressHelper().selectAddress(before.size()-1);
   app.getAddressHelper().editSelectedAddress(before.size()-1);
-  AddressData address = new AddressData(before.get(before.size()-1).getId(),"Helena", "Mak", "hm@wp.pl",null);
+  AddressData address = new AddressData(before.get(before.size()-1).getId(),"Żulana", "Huk", "hm@wp.pl",null);
   app.getAddressHelper().fillAddressForm(address, false);
   app.getAddressHelper().submitAddressModification();
   app.getAddressHelper().returnToHomePage();
@@ -28,6 +29,9 @@ public void testAddressModification(){
 
   before.remove(before.size()-1);
   before.add(address);
-  Assert.assertEquals(new HashSet<Object>(before), new HashSet<Object> (after));
+  Comparator<? super AddressData> byId = (a1, a2) ->Integer.compare(a1.getId(), a2.getId());
+  before.sort(byId);
+  after.sort(byId);
+  Assert.assertEquals(before, after);
 }
 }
