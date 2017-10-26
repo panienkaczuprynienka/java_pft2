@@ -5,15 +5,14 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 public class AddressModificationTests extends TestBase {
 
 
-@Test
+@Test(enabled=false)
 public void testAddressModification(){
-  app.getNavigationHelper().goToHomePage();
+  app.goTo().goToHomePage();
   if (!app.getAddressHelper().isThereAnAddress()){
     app.getAddressHelper().createAddress((new AddressData("Zdzislawa", "Sledz", "z.s@wp.pl", "jep")), true);
   }

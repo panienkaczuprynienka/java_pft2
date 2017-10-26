@@ -5,15 +5,14 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 public class AddressCreationTests extends TestBase {
 
 
-  @Test
+  @Test(enabled=false)
   public void testAddressCreation() {
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     List<AddressData> before = app.getAddressHelper().getAddressList();
     AddressData address = new AddressData("Elżbieta", "Henke", "jsz@wp.pl", "jep");
     app.getAddressHelper().createAddress((address), true);

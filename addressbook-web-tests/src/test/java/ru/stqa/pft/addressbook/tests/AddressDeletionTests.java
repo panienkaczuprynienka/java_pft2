@@ -9,9 +9,9 @@ import java.util.List;
 public class AddressDeletionTests extends TestBase {
 
 
-  @Test
+  @Test(enabled=false)
   public void testAddressDeletion() {
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
         if (!app.getAddressHelper().isThereAnAddress()){
           app.getAddressHelper().createAddress((new AddressData("Zdzislawa", "Sledz", "z.s@wp.pl", "jep")), true);
         }
@@ -19,7 +19,7 @@ public class AddressDeletionTests extends TestBase {
     app.getAddressHelper().selectAddress(before.size()-1);
     app.getAddressHelper().deleteAddress();
     app.getAddressHelper().okAlert();
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     List<AddressData> after = app.getAddressHelper().getAddressList();
     Assert.assertEquals(after.size(), before.size()-1);
 
