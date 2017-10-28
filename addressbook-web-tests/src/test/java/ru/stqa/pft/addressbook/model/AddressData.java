@@ -4,26 +4,26 @@ public class AddressData {
   private int id;
   private final String firstname;
   private final String lastname;
-  private final String address;
+  private final String personalAddress;
   private String group;
 
   public int getId() {
     return id;
   }
 
-  public AddressData(String firstname, String lastname, String address, String group) {
+  public AddressData(String firstname, String lastname, String personalAddress, String group) {
     this.id = Integer.MAX_VALUE;
     this.firstname = firstname;
     this.lastname = lastname;
-    this.address = address;
+    this.personalAddress = personalAddress;
     this.group = group;
   }
 
-  public AddressData(int id, String firstname, String lastname, String address, String group) {
+  public AddressData(int id, String firstname, String lastname, String personalAddress, String group) {
     this.id = id;
     this.firstname = firstname;
     this.lastname = lastname;
-    this.address = address;
+    this.personalAddress = personalAddress;
     this.group = group;
   }
 
@@ -35,8 +35,8 @@ public class AddressData {
     return lastname;
   }
 
-  public String getAddress() {
-    return address;
+  public String getPersonalAddress() {
+    return personalAddress;
   }
 
   public String getGroup() { return group; }
