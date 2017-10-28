@@ -13,7 +13,7 @@ public class AddressDeletionTests extends TestBase {
   public void ensurePreconditions() {
     app.goTo().homePage();
     if (app.address().list().size()==0) {
-      app.address().create((new AddressData("Zdzislawa", "Sledz", "z.s@wp.pl", "jep")), true);
+      app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot").withPersonalAddress("hk@wp.pl").withGroup("jep")), true);
     }
   }
 

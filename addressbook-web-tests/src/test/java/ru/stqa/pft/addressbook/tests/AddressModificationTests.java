@@ -14,7 +14,7 @@ public class AddressModificationTests extends TestBase {
 public void ensurePreconditions(){
   app.goTo().homePage();
   if (app.address().list().size()==0){
-    app.address().create((new AddressData("Zdzislawa", "Sledz", "z.s@wp.pl", "jep")), true);
+    app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot").withPersonalAddress("hk@wp.pl").withGroup("jep")), true);
   }
 }
 
@@ -23,7 +23,8 @@ public void testAddressModification(){
 
   List<AddressData> before = app.address().list();
   int index = before.size()-1;
-  AddressData address = new AddressData(before.get(index).getId(),"Żulana", "Huk", "hm@wp.pl",null);
+  AddressData address = new AddressData()
+          .withId(before.get(index).getId()).withFirstname("Żulana").withLastname("Huk").withPersonalAddress("hm@wp.pl");
   app.address().modify(index, address);
   List<AddressData> after = app.address().list();
   Assert.assertEquals(after.size(), before.size());

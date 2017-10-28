@@ -14,7 +14,7 @@ public class AddressCreationTests extends TestBase {
   public void testAddressCreation() {
     app.goTo().homePage();
     List<AddressData> before = app.address().list();
-    AddressData address = new AddressData("Elżbieta", "Henke", "jsz@wp.pl", "jep");
+    AddressData address = new AddressData().withFirstname("Dzulietta").withLastname("Flak").withPersonalAddress("jf@wp.pl").withGroup("jep");
     app.address().create((address), true);
     List<AddressData> after = app.address().list();
     Assert.assertEquals(after.size(), before.size()+1);

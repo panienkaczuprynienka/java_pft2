@@ -1,30 +1,14 @@
 package ru.stqa.pft.addressbook.model;
 
 public class AddressData {
-  private int id;
-  private final String firstname;
-  private final String lastname;
-  private final String personalAddress;
+  private int id = Integer.MAX_VALUE;;
+  private String firstname;
+  private String lastname;
+  private String personalAddress;
   private String group;
 
   public int getId() {
     return id;
-  }
-
-  public AddressData(String firstname, String lastname, String personalAddress, String group) {
-    this.id = Integer.MAX_VALUE;
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.personalAddress = personalAddress;
-    this.group = group;
-  }
-
-  public AddressData(int id, String firstname, String lastname, String personalAddress, String group) {
-    this.id = id;
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.personalAddress = personalAddress;
-    this.group = group;
   }
 
   public String getFirstname() {
@@ -42,9 +26,31 @@ public class AddressData {
   public String getGroup() { return group; }
 
 
-  public void setId(int id) {
+  public AddressData withId(int id) {
     this.id = id;
+    return this;
   }
+
+  public AddressData withFirstname(String firstname) {
+    this.firstname = firstname;
+    return this;
+  }
+
+  public AddressData withLastname(String lastname) {
+    this.lastname = lastname;
+    return this;
+  }
+
+  public AddressData withPersonalAddress(String personalAddress) {
+    this.personalAddress = personalAddress;
+    return this;
+  }
+
+  public AddressData withGroup(String group) {
+    this.group = group;
+    return this;
+  }
+
 
   @Override
   public String toString() {
