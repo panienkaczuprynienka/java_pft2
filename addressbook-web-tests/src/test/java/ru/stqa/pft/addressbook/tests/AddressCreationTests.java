@@ -10,13 +10,13 @@ import java.util.List;
 public class AddressCreationTests extends TestBase {
 
 
-  @Test(enabled=false)
+  @Test
   public void testAddressCreation() {
-    app.goTo().goToHomePage();
-    List<AddressData> before = app.getAddressHelper().getAddressList();
+    app.goTo().homePage();
+    List<AddressData> before = app.address().list();
     AddressData address = new AddressData("Elżbieta", "Henke", "jsz@wp.pl", "jep");
-    app.getAddressHelper().createAddress((address), true);
-    List<AddressData> after = app.getAddressHelper().getAddressList();
+    app.address().create((address), true);
+    List<AddressData> after = app.address().list();
     Assert.assertEquals(after.size(), before.size()+1);
 
 

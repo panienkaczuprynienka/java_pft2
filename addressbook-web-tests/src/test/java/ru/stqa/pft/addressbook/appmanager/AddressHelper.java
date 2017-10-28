@@ -53,15 +53,34 @@ public class AddressHelper extends HelperBase {
     wd.findElements(By.cssSelector("a[href^='edit.php']")).get(index+1).click();
   }
 
+  public void selectAddress(int index) {
+    wd.findElements(By.name("selected[]")).get(index).click();
+  }
+
   public void submitAddressModification() {
     click(By.xpath("//div[@id='content']/form[1]/input[22]"));
   }
 
-  public void createAddress(AddressData address, boolean creation) {
+  public void create(AddressData address, boolean creation) {
     initAddressCreation();
     fillAddressForm(address, creation);
     submitAddressForm();
     returnToHomePage();
+  }
+
+
+  public void modify(int index, AddressData address) {
+    selectAddress(index);
+    editSelectedAddress(index);
+    fillAddressForm(address, false);
+    submitAddressModification();
+    returnToHomePage();
+  }
+
+  public void delete(int index) {
+    selectAddress(index);
+    deleteAddress();
+    okAlert();
   }
 
   public boolean isThereAnAddress() {
@@ -72,9 +91,7 @@ public class AddressHelper extends HelperBase {
    return wd.findElements(By.name("selected[]")).size();
   }
 
-  public void selectAddress(int index) {
-    wd.findElements(By.name("selected[]")).get(index).click();
-  }
+
 
   public void deleteAddress() {
     click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
@@ -84,7 +101,7 @@ public class AddressHelper extends HelperBase {
     wd.switchTo().alert().accept();
   }
 
-  public List<AddressData> getAddressList() {
+  public List<AddressData> list() {
     List<AddressData> addresses = new ArrayList<AddressData>();
     List<WebElement> elements = wd.findElements(By.xpath(".//tr[@name='entry']"));
     for (WebElement element : elements){

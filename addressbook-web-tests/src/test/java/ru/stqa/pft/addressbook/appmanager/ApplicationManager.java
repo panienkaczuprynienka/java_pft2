@@ -82,7 +82,7 @@ public class ApplicationManager {
     wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
   }
 
-  public AddressHelper getAddressHelper() {
+  public AddressHelper address() {
     return addressHelper;
   }
 
