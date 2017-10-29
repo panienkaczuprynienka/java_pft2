@@ -24,7 +24,7 @@ public class GroupDeletionTests extends TestBase {
     }
   }
 
-  @Test(enabled=false)
+  @Test
   public void testGroupDeletion() {
     Groups before = app.group().all();
     // tu sie wybiera grupa w losowy sposob

@@ -24,7 +24,7 @@ public class GroupModificationTests extends TestBase{
     }
   }
 
-  @Test(enabled=false)
+  @Test
   public void testGroupModification(){
     Groups before = app.group().all();
     //tu sie wybiera grupa w losowy sposób
