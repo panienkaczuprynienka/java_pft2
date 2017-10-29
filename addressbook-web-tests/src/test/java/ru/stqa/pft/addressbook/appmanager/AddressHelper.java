@@ -147,5 +147,24 @@ public class AddressHelper extends HelperBase {
   }
 
 
+  public AddressData infoFromEditForm(AddressData address) {
+    initAddressModificationById(address.getId());
+    String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
+    String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
+    String home = wd.findElement(By.name("home")).getAttribute("value");
+    String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
+    String work = wd.findElement(By.name("work")).getAttribute("value");
+  wd.navigate().back();
+  return new AddressData().withId(address.getId()).withFirstname(firstname).withLastname(lastname)
+          .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work);
+  }
+
+  private void initAddressModificationById(int id){
+    WebElement checkbox = wd.findElement(By.cssSelector(String.format("input[value='%s']")));
+    WebElement row = checkbox.findElement(By.xpath("./../.."));
+    List<WebElement> cells = (List<WebElement>) row.findElement(By.tagName("td"));
+    cells.get(7).findElement(By.tagName("a")).click();
+  }
+
 }
 

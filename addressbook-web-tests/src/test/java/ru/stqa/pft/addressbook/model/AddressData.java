@@ -6,6 +6,9 @@ public class AddressData {
   private String lastname;
   private String personalAddress;
   private String group;
+  private String homePhone;
+  private String mobilePhone;
+  private String workPhone;
 
   public int getId() {
     return id;
@@ -51,6 +54,20 @@ public class AddressData {
     return this;
   }
 
+  public AddressData withHomePhone(String homePhone) {
+    this.homePhone = homePhone;
+    return this;
+  }
+
+  public AddressData withMobilePhone(String mobilePhone) {
+    this.mobilePhone = mobilePhone;
+    return this;
+  }
+
+  public AddressData withWorkPhone(String workPhone) {
+    this.workPhone = workPhone;
+    return this;
+  }
 
   @Override
   public String toString() {
