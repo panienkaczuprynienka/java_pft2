@@ -6,24 +6,22 @@ import ru.stqa.pft.addressbook.model.AddressData;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 public class AddressCreationTests extends TestBase {
 
 
-  @Test
+  @Test(enabled=false)
   public void testAddressCreation() {
     app.goTo().homePage();
-    List<AddressData> before = app.address().list();
+    Set<AddressData> before = app.address().all();
     AddressData address = new AddressData().withFirstname("Dzulietta").withLastname("Flak").withPersonalAddress("jf@wp.pl").withGroup("jep");
     app.address().create((address), true);
-    List<AddressData> after = app.address().list();
+    Set<AddressData> after = app.address().all();
     Assert.assertEquals(after.size(), before.size()+1);
 
-
+    address.withId(after.stream().mapToInt((a)->a.getId()).max().getAsInt());
     before.add(address);
-    Comparator<? super AddressData> byId = (a1, a2) ->Integer.compare(a1.getId(), a2.getId());
-    before.sort(byId);
-    after.sort(byId);
     Assert.assertEquals(before, after);
   }
 }

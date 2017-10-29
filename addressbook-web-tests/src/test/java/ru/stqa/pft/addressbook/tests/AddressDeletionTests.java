@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 
 import java.util.List;
+import java.util.Set;
 
 public class AddressDeletionTests extends TestBase {
 
@@ -17,16 +18,18 @@ public class AddressDeletionTests extends TestBase {
     }
   }
 
-  @Test
+  @Test(enabled=false)
   public void testAddressDeletion() {
-    List<AddressData> before = app.address().list();
+    Set<AddressData> before = app.address().all();
+    //zwracanie poierwszego znalezionego elementu zbioru
+    AddressData deletedAddress = before.iterator().next();
     int index = before.size()-1;
-    app.address().delete(index);
+    app.address().delete(deletedAddress);
     app.goTo().homePage();
-    List<AddressData> after = app.address().list();
+    Set<AddressData> after = app.address().all();
     Assert.assertEquals(after.size(), before.size()-1);
 
-    before.remove(index);
+    before.remove(deletedAddress);
     Assert.assertEquals(before, after);
 
   }

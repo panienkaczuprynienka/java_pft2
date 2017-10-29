@@ -7,6 +7,7 @@ import ru.stqa.pft.addressbook.model.AddressData;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 public class AddressModificationTests extends TestBase {
 
@@ -18,22 +19,20 @@ public void ensurePreconditions(){
   }
 }
 
-@Test
+@Test(enabled=false)
 public void testAddressModification(){
 
-  List<AddressData> before = app.address().list();
-  int index = before.size()-1;
+  Set<AddressData> before = app.address().all();
+  // wybieranie ktoregos elementu ze zbioru
+  AddressData modifiedAddress = before.iterator().next();
   AddressData address = new AddressData()
-          .withId(before.get(index).getId()).withFirstname("Żulana").withLastname("Huk").withPersonalAddress("hm@wp.pl");
-  app.address().modify(index, address);
-  List<AddressData> after = app.address().list();
+          .withId(modifiedAddress.getId()).withFirstname("Żulana").withLastname("Huk").withPersonalAddress("hm@wp.pl");
+  app.address().modify(address);
+  Set<AddressData> after = app.address().all();
   Assert.assertEquals(after.size(), before.size());
 
-  before.remove(index);
+  before.remove(modifiedAddress);
   before.add(address);
-  Comparator<? super AddressData> byId = (a1, a2) ->Integer.compare(a1.getId(), a2.getId());
-  before.sort(byId);
-  after.sort(byId);
   Assert.assertEquals(before, after);
 }
 
