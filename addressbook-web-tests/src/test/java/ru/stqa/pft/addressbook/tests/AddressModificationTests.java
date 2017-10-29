@@ -5,8 +5,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 
-import java.util.Comparator;
-import java.util.List;
 import java.util.Set;
 
 public class AddressModificationTests extends TestBase {
@@ -14,12 +12,12 @@ public class AddressModificationTests extends TestBase {
 @BeforeMethod
 public void ensurePreconditions(){
   app.goTo().homePage();
-  if (app.address().list().size()==0){
+  if (app.address().all().size()==0){
     app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot").withPersonalAddress("hk@wp.pl").withGroup("jep")), true);
   }
 }
 
-@Test(enabled=false)
+@Test
 public void testAddressModification(){
 
   Set<AddressData> before = app.address().all();

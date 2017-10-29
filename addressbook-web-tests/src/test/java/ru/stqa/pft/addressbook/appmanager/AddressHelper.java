@@ -53,14 +53,7 @@ public class AddressHelper extends HelperBase {
   }
 
   public void editSelectedAddressById(int id) {
-   // wd.findElements(By.cssSelector("a[href^='edit.php']")).get(id+1).click();
-    //wd.findElements(By.cssSelector("tr[name=entry] a[href^='edit.php']")).get(id).click();
-    wd.findElements(By.cssSelector("tr[name=entry] a[href='edit.php?id=" + id + "]")).get(id).click();
-    //wd.findElements(By.xpath("//tr[@name='entry']//td[@class='center'][3]")).get(id).click();
-  }
-
-  public void selectAddress(int index) {
-    wd.findElements(By.name("selected[]")).get(index).click();
+    wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();
   }
 
   public void selectAddressById(int id) {
@@ -87,12 +80,6 @@ public class AddressHelper extends HelperBase {
     fillAddressForm(address, false);
     submitAddressModification();
     returnToHomePage();
-  }
-
-  public void delete(int index) {
-    selectAddress(index);
-    deleteAddress();
-    okAlert();
   }
 
 
@@ -122,6 +109,7 @@ public class AddressHelper extends HelperBase {
     wd.switchTo().alert().accept();
   }
 
+  /*
   public List<AddressData> list() {
     List<AddressData> addresses = new ArrayList<AddressData>();
     List<WebElement> elements = wd.findElements(By.xpath(".//tr[@name='entry']"));
@@ -133,6 +121,7 @@ public class AddressHelper extends HelperBase {
     }
     return addresses;
   }
+  */
 
   public Set<AddressData> all() {
     Set<AddressData> addresses = new HashSet<AddressData>();

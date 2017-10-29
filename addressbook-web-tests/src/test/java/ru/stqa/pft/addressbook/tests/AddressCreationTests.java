@@ -4,14 +4,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 
-import java.util.Comparator;
-import java.util.List;
 import java.util.Set;
 
 public class AddressCreationTests extends TestBase {
 
 
-  @Test(enabled=false)
+  @Test
   public void testAddressCreation() {
     app.goTo().homePage();
     Set<AddressData> before = app.address().all();
