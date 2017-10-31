@@ -131,7 +131,9 @@ public class AddressHelper extends HelperBase {
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
       String firstname = element.findElement(By.xpath(".//td[3]")).getText();
       String lastname = element.findElement(By.xpath(".//td[2]")).getText();
-      addresses.add(new AddressData().withId(id).withFirstname(firstname).withLastname(lastname));
+      String[] phones = element.findElement(By.xpath(".//td[6]")).getText().split("\n");
+      addresses.add(new AddressData().withId(id).withFirstname(firstname).withLastname(lastname)
+              .withHomePhone(phones[0]).withMobilePhone(phones[1]).withWorkPhone(phones[2]));
     }
     return addresses;
   }
@@ -149,11 +151,10 @@ public class AddressHelper extends HelperBase {
           .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work);
   }
 
+  // to jest taka sama metoda jak editSelectedAddressById ale oj tam
   private void initAddressModificationById(int id){
-    WebElement checkbox = wd.findElement(By.cssSelector(String.format("input[value='%s']")));
-    WebElement row = checkbox.findElement(By.xpath("./../.."));
-    List<WebElement> cells = (List<WebElement>) row.findElement(By.tagName("td"));
-    cells.get(7).findElement(By.tagName("a")).click();
+    wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();
+
   }
 
 }

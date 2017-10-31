@@ -28,6 +28,11 @@ public class AddressData {
 
   public String getGroup() { return group; }
 
+  public String getHomePhone() { return homePhone; }
+
+  public String getMobilePhone() { return mobilePhone; }
+
+  public String getWorkPhone() { return workPhone; }
 
   public AddressData withId(int id) {
     this.id = id;
