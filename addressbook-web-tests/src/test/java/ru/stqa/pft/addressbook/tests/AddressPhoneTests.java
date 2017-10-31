@@ -6,6 +6,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.*;
 
@@ -25,12 +28,17 @@ public class AddressPhoneTests extends TestBase {
     AddressData address = app.address().all().iterator().next();
     AddressData addressInfoFromEditForm = app.address().infoFromEditForm(address);
 
-    assertThat(address.getHomePhone(), equalTo(cleaned(addressInfoFromEditForm.getHomePhone())));
-    assertThat(address.getMobilePhone(), equalTo(cleaned(addressInfoFromEditForm.getMobilePhone())));
-    assertThat(address.getWorkPhone(), equalTo(cleaned(addressInfoFromEditForm.getWorkPhone())));
+    assertThat(address.getAllPhones(), equalTo(mergePhones(addressInfoFromEditForm)));
   }
 
-  public String cleaned(String phone){
+  private String mergePhones(AddressData address) {
+    return Arrays.asList(address.getHomePhone(), address.getMobilePhone(), address.getWorkPhone())
+            .stream().filter((s) -> ! s.equals(""))
+            .map(AddressPhoneTests::cleaned)
+            .collect(Collectors.joining("\n"));
+  }
+
+  public static String cleaned(String phone){
     return phone.replaceAll("\\s","").replaceAll("[-()]","");
   }
 

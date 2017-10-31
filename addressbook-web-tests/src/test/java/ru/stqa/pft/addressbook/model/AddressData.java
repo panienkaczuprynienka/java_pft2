@@ -9,6 +9,7 @@ public class AddressData {
   private String homePhone;
   private String mobilePhone;
   private String workPhone;
+  private String allPhones;
 
   public int getId() {
     return id;
@@ -33,6 +34,8 @@ public class AddressData {
   public String getMobilePhone() { return mobilePhone; }
 
   public String getWorkPhone() { return workPhone; }
+
+  public String getAllPhones() { return allPhones; }
 
   public AddressData withId(int id) {
     this.id = id;
@@ -71,6 +74,11 @@ public class AddressData {
 
   public AddressData withWorkPhone(String workPhone) {
     this.workPhone = workPhone;
+    return this;
+  }
+
+  public AddressData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
     return this;
   }
 
