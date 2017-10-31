@@ -1,7 +1,5 @@
 package ru.stqa.pft.addressbook.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
@@ -29,17 +27,32 @@ public class AddressPhoneTests extends TestBase {
     AddressData addressInfoFromEditForm = app.address().infoFromEditForm(address);
 
     assertThat(address.getAllPhones(), equalTo(mergePhones(addressInfoFromEditForm)));
+    assertThat(address.getAllEmails(), equalTo(mergeEmails(addressInfoFromEditForm)));
+
   }
+
 
   private String mergePhones(AddressData address) {
     return Arrays.asList(address.getHomePhone(), address.getMobilePhone(), address.getWorkPhone())
             .stream().filter((s) -> ! s.equals(""))
-            .map(AddressPhoneTests::cleaned)
+            .map(AddressPhoneTests::cleanedPhones)
             .collect(Collectors.joining("\n"));
   }
 
-  public static String cleaned(String phone){
+  private String mergeEmails(AddressData address) {
+    return Arrays.asList(address.getEmail(), address.getEmail2(), address.getEmail3())
+            .stream().filter((s) -> ! s.equals(""))
+            .map(AddressPhoneTests::cleanedEmails)
+            .collect(Collectors.joining("\n"));
+  }
+
+
+  public static String cleanedPhones(String phone){
     return phone.replaceAll("\\s","").replaceAll("[-()]","");
+  }
+
+  public static String cleanedEmails(String phone){
+    return phone.replaceAll("\\s","");
   }
 
 }
