@@ -41,7 +41,7 @@ public class AddressPhoneTests extends TestBase {
 
   private String mergeEmails(AddressData address) {
     return Arrays.asList(address.getEmail(), address.getEmail2(), address.getEmail3())
-            .stream().filter((s) -> ! s.equals(""))
+            .stream().filter((s) -> s !=  null && ! s.equals(""))
             .map(AddressPhoneTests::cleanedEmails)
             .collect(Collectors.joining("\n"));
   }

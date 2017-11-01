@@ -88,7 +88,7 @@ public class AddressData {
     return this;
   }
 
-  public AddressData withEmail(String email1) {
+  public AddressData withEmail(String email) {
     this.email = email;
     return this;
   }
