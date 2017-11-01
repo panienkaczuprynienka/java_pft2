@@ -28,6 +28,7 @@ public class AddressPhoneTests extends TestBase {
 
     assertThat(address.getAllPhones(), equalTo(mergePhones(addressInfoFromEditForm)));
     assertThat(address.getAllEmails(), equalTo(mergeEmails(addressInfoFromEditForm)));
+    assertThat(address.getPersonalAddress(), equalTo((address.getPersonalAddress())));
 
   }
 
@@ -47,12 +48,16 @@ public class AddressPhoneTests extends TestBase {
   }
 
 
+  public static String cleanedPersonalAddress(String personalAddress){
+    return personalAddress.replaceAll("\\s","").replaceAll("[-()]","");
+  }
+
   public static String cleanedPhones(String phone){
     return phone.replaceAll("\\s","").replaceAll("[-()]","");
   }
 
-  public static String cleanedEmails(String phone){
-    return phone.replaceAll("\\s","");
+  public static String cleanedEmails(String email){
+    return email.replaceAll("\\s","");
   }
 
 }
