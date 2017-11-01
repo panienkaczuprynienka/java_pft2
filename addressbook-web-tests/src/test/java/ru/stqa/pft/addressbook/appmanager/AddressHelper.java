@@ -134,7 +134,7 @@ public class AddressHelper extends HelperBase {
       String personalAddress = element.findElement(By.xpath(".//td[4]")).getText();
       String allPhones = element.findElement(By.xpath(".//td[6]")).getText();
       String allEmails = element.findElement(By.xpath(".//td[5]")).getText();
-      addresses.add(new AddressData().withId(id).withFirstname(firstname).withLastname(lastname)
+      addresses.add(new AddressData().withId(id).withFirstname(firstname).withLastname(lastname).withPersonalAddress(personalAddress)
               .withAllEmails(allEmails).withAllPhones(allPhones));
     }
     return addresses;
