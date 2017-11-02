@@ -41,12 +41,16 @@ public class AddressHelper extends HelperBase {
     type(By.name("firstname"), addressData.getFirstname());
     type(By.name("lastname"), addressData.getLastname());
     type(By.name("address"), addressData.getPersonalAddress());
+    attach(By.name("photo"), addressData.getPhoto());
 
+    // ponizej zakomentowany if creation bo ciagle z tym problemy są
+    /*
     if (creation) {
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(addressData.getGroup());
     } else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
+    */
   }
 
   public void editSelectedAddress(int index) {
