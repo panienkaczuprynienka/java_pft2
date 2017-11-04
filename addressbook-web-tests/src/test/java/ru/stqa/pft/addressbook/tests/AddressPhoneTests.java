@@ -34,7 +34,7 @@ public class AddressPhoneTests extends TestBase {
 
 
   private String mergePhones(AddressData address) {
-    return Arrays.asList(address.getHomePhone(), address.getMobilePhone(), address.getWorkPhone())
+    return Arrays.asList(address.getHomePhone(), address.getMobilePhone(), address.getWorkPhone(), address.getFaxPhone())
             .stream().filter((s) -> !s.equals(""))
             .map(AddressPhoneTests::cleanedPhones)
             .collect(Collectors.joining("\n"));

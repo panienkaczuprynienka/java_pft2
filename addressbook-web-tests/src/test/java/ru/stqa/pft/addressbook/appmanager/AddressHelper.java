@@ -148,7 +148,11 @@ public class AddressHelper extends HelperBase {
   public AddressData infoFromEditForm(AddressData address) {
     initAddressModificationById(address.getId());
     String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
+    String middlename = wd.findElement(By.name("middlename")).getAttribute("value");
     String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
+    String nickname = wd.findElement(By.name("nickname")).getAttribute("value");
+    String company = wd.findElement(By.name("company")).getAttribute("value");
+    String title = wd.findElement(By.name("title")).getAttribute("value");
     String personalAddress = wd.findElement(By.name("address")).getAttribute("value");
     String email = wd.findElement(By.name("email")).getAttribute("value");
     String email2 = wd.findElement(By.name("email2")).getAttribute("value");
@@ -156,10 +160,14 @@ public class AddressHelper extends HelperBase {
     String home = wd.findElement(By.name("home")).getAttribute("value");
     String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
     String work = wd.findElement(By.name("work")).getAttribute("value");
+    String fax = wd.findElement(By.name("fax")).getAttribute("value");
+    String homepage = wd.findElement(By.name("homepage")).getAttribute("value");
   wd.navigate().back();
-  return new AddressData().withId(address.getId()).withFirstname(firstname).withLastname(lastname).withPersonalAddress(personalAddress)
+  return new AddressData().withId(address.getId()).
+          withFirstname(firstname).withMiddlename(middlename).withLastname(lastname).withNickname(nickname)
+          .withCompany(company).withTitle(title).withPersonalAddress(personalAddress)
           .withEmail(email).withEmail2(email2).withEmail3(email3)
-          .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work);
+          .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).withFaxPhone(fax).withHomepage(homepage);
   }
 
   // to jest taka sama metoda jak editSelectedAddressById ale oj tam

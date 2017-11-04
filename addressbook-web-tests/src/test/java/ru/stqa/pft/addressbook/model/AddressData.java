@@ -6,7 +6,11 @@ public class AddressData {
   private int id = Integer.MAX_VALUE;
   ;
   private String firstname;
+  private String middlename;
   private String lastname;
+  private String nickname;
+  private String company;
+  private String title;
   private String personalAddress;
   private String email;
   private String email2;
@@ -16,8 +20,34 @@ public class AddressData {
   private String homePhone;
   private String mobilePhone;
   private String workPhone;
+  private String faxPhone;
   private String allPhones;
+  private String homepage;
   private File photo;
+
+  public String getMiddlename() {
+    return middlename;
+  }
+
+  public String getNickname() {
+    return nickname;
+  }
+
+  public String getCompany() {
+    return company;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public String getFaxPhone() {
+    return faxPhone;
+  }
+
+  public String getHomepage() {
+    return homepage;
+  }
 
   public int getId() {
     return id;
@@ -73,6 +103,36 @@ public class AddressData {
 
   public File getPhoto() {
     return photo;
+  }
+
+  public AddressData withMiddlename(String middlename) {
+    this.middlename = middlename;
+    return this;
+  }
+
+  public AddressData withNickname(String nickname) {
+    this.nickname = nickname;
+    return this;
+  }
+
+  public AddressData withCompany(String company) {
+    this.company = company;
+    return this;
+  }
+
+  public AddressData withTitle(String title) {
+    this.title = title;
+    return this;
+  }
+
+  public AddressData withFaxPhone(String faxPhone) {
+    this.faxPhone = faxPhone;
+    return this;
+  }
+
+  public AddressData withHomepage(String homepage) {
+    this.homepage = homepage;
+    return this;
   }
 
   public AddressData withId(int id) {
