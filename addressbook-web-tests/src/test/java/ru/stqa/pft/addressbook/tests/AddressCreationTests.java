@@ -57,9 +57,6 @@ public class AddressCreationTests extends TestBase {
   public void testAddressCreation() {
     app.goTo().homePage();
     Addresses before = app.address().all();
-    File photo = new File("src/test/resources/fotografia.png");
-    AddressData address = new AddressData().withFirstname("Dzulietta").withLastname("Flak")
-            .withPersonalAddress("jf@wp.pl").withPhoto(photo);
     app.address().create((address), true);
     Addresses after = app.address().all();
     assertThat(after.size(), equalTo(before.size()+1));
