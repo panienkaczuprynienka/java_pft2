@@ -1,0 +1,23 @@
+[
+  {
+    "firstname": "imie 0",
+    "lastname": "nazwisko 0",
+    "personalAddress": "adres zamieszkania 0",
+    "allEmails": "emaile 0",
+    "allPhones": "telefony 0"
+  },
+  {
+    "firstname": "imie 1",
+    "lastname": "nazwisko 1",
+    "personalAddress": "adres zamieszkania 1",
+    "allEmails": "emaile 1",
+    "allPhones": "telefony 1"
+  },
+  {
+    "firstname": "imie 2",
+    "lastname": "nazwisko 2",
+    "personalAddress": "adres zamieszkania 2",
+    "allEmails": "emaile 2",
+    "allPhones": "telefony 2"
+  }
+]
