@@ -55,9 +55,9 @@ public class AddressCreationTests extends TestBase {
     }
   }
 
-/*
+
   @Test(dataProvider = "validAddressesFromXml")
-  public void testAddressCreation() {
+  public void testAddressCreation(AddressData address) {
     app.goTo().homePage();
     Addresses before = app.address().all();
     app.address().create((address), true);
@@ -68,7 +68,7 @@ public class AddressCreationTests extends TestBase {
             before.withAdded(address.withId(after.stream().mapToInt((a) -> a.getId()).max().getAsInt()))));
   }
 
-*/
+
 
   /*
 @Test
