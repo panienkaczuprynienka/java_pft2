@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.AddressDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-11-05T19:42:59" hostname="DESKTOP-O2K9941" time="1.195">
+  <properties/>
+  <testcase name="testAddressDeletion" classname="ru.stqa.pft.addressbook.tests.AddressDeletionTests" time="1.195"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

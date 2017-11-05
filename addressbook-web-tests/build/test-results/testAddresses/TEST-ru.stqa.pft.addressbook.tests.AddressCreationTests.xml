@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.AddressCreationTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2017-11-05T19:42:52" hostname="DESKTOP-O2K9941" time="4.247">
+  <properties/>
+  <testcase name="testAddressCreation[0](AddressData{id='0', firstname='imie 0', lastname='nazwisko 0'})" classname="ru.stqa.pft.addressbook.tests.AddressCreationTests" time="2.155"/>
+  <testcase name="testAddressCreation[1](AddressData{id='0', firstname='imie 1', lastname='nazwisko 1'})" classname="ru.stqa.pft.addressbook.tests.AddressCreationTests" time="2.092"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
