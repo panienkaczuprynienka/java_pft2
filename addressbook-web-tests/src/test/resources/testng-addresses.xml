@@ -4,6 +4,8 @@
     <test name="Addresses">
         <classes>
             <class name="ru.stqa.pft.addressbook.tests.AddressCreationTests" />
+            <class name="ru.stqa.pft.addressbook.tests.AddressModificationTests" />
+            <class name="ru.stqa.pft.addressbook.tests.AddressDeletionTests" />
 
         </classes>
     </test>
