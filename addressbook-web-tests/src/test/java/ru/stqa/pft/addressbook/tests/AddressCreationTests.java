@@ -25,45 +25,50 @@ public class AddressCreationTests extends TestBase {
 
   @DataProvider
   public Iterator<Object[]> validAddressesFromXml() throws IOException {
-    BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/addresses.xml")));
-    String xml = "";
-    String line = reader.readLine();
-    while (line!=null){
-      xml += line;
-      line = reader.readLine();
+    try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/addresses.xml")))) {
+      String xml = "";
+      String line = reader.readLine();
+      while (line != null) {
+        xml += line;
+        line = reader.readLine();
+      }
+      XStream xstream = new XStream();
+      xstream.processAnnotations(AddressData.class);
+      List<AddressData> addresses = (List<AddressData>) xstream.fromXML(xml);
+      return addresses.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
     }
-    XStream xstream = new XStream();
-    xstream.processAnnotations(AddressData.class);
-    List<AddressData> addresses = (List<AddressData>) xstream.fromXML(xml);
-    return addresses.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
   }
 
   @DataProvider
   public Iterator<Object[]> validAddressesFromJson() throws IOException {
-    BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/addresses.json")));
-    String json = "";
-    String line = reader.readLine();
-    while (line!=null){
-      json += line;
-      line = reader.readLine();
+    try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/addresses.json")))) {
+      String json = "";
+      String line = reader.readLine();
+      while (line != null) {
+        json += line;
+        line = reader.readLine();
+      }
+      Gson gson = new Gson();
+      List<AddressData> addresses = gson.fromJson(json, new TypeToken<List<AddressData>>() {
+      }.getType()); //List<AddressData>.class
+      return addresses.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
     }
-    Gson gson = new Gson();
-    List<AddressData> addresses = gson.fromJson(json, new TypeToken<List<AddressData>>(){}.getType()); //List<AddressData>.class
-    return addresses.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
   }
 
 
-  @Test(dataProvider = "validAddressesFromJson")
+  @Test(dataProvider = "validAddressesFromXml")
   public void testAddressCreation() {
     app.goTo().homePage();
     Addresses before = app.address().all();
     app.address().create((address), true);
     Addresses after = app.address().all();
-    assertThat(after.size(), equalTo(before.size()+1));
+    assertThat(after.size(), equalTo(before.size() + 1));
 
     assertThat(after, equalTo(
-            before.withAdded(address.withId(after.stream().mapToInt((a)->a.getId()).max().getAsInt()))));
+            before.withAdded(address.withId(after.stream().mapToInt((a) -> a.getId()).max().getAsInt()))));
   }
+
+
 
   /*
 @Test

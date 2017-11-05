@@ -20,4 +20,18 @@
     <allEmails>emaile 2</allEmails>
     <allPhones>telefony 2</allPhones>
   </addresses>
+  <addresses>
+    <firstname>imie 3</firstname>
+    <lastname>nazwisko 3</lastname>
+    <personalAddress>adres zamieszkania 3</personalAddress>
+    <allEmails>emaile 3</allEmails>
+    <allPhones>telefony 3</allPhones>
+  </addresses>
+  <addresses>
+    <firstname>imie 4</firstname>
+    <lastname>nazwisko 4</lastname>
+    <personalAddress>adres zamieszkania 4</personalAddress>
+    <allEmails>emaile 4</allEmails>
+    <allPhones>telefony 4</allPhones>
+  </addresses>
 </list>

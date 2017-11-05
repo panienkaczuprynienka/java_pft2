@@ -19,5 +19,19 @@
     "personalAddress": "adres zamieszkania 2",
     "allEmails": "emaile 2",
     "allPhones": "telefony 2"
+  },
+  {
+    "firstname": "imie 3",
+    "lastname": "nazwisko 3",
+    "personalAddress": "adres zamieszkania 3",
+    "allEmails": "emaile 3",
+    "allPhones": "telefony 3"
+  },
+  {
+    "firstname": "imie 4",
+    "lastname": "nazwisko 4",
+    "personalAddress": "adres zamieszkania 4",
+    "allEmails": "emaile 4",
+    "allPhones": "telefony 4"
   }
 ]
