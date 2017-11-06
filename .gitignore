@@ -20,3 +20,4 @@ gradle-app.setting
 .idea/workspace.xml
 .idea/workspace.xml
 addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/AddressPhoneTests.java
+*.log
