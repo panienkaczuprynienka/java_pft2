@@ -45,10 +45,12 @@
       <file leaf-file-name="AddressData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/AddressData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="109" column="16" lean-forward="false" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
+            <state relative-caret-position="711">
+              <caret line="89" column="16" lean-forward="false" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1668#1669#0" expanded="true" />
+                <element signature="e#1694#1695#0" expanded="true" />
                 <element signature="e#1964#1965#0" expanded="true" />
                 <element signature="e#1990#1991#0" expanded="true" />
               </folding>
@@ -59,8 +61,8 @@
       <file leaf-file-name="AddressHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/AddressHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="138" column="17" lean-forward="false" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="17" />
+            <state relative-caret-position="67">
+              <caret line="172" column="34" lean-forward="false" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -69,8 +71,8 @@
       <file leaf-file-name="AddressPhoneTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/AddressPhoneTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="-93">
+              <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -1217,35 +1219,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AddressPhoneTests - 2017.11.09 at 08h 57m 17s.xml">
+    <history-entry file="AddressPhoneTests - 2017.11.09 at 15h 55m 44s.xml">
       <configuration name="AddressPhoneTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddressPhoneTests - 2017.11.09 at 09h 01m 54s.xml">
+    <history-entry file="AddressPhoneTests - 2017.11.09 at 16h 08m 44s.xml">
       <configuration name="AddressPhoneTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddressPhoneTests - 2017.11.09 at 09h 02m 34s.xml">
+    <history-entry file="AddressPhoneTests - 2017.11.09 at 16h 09m 29s.xml">
       <configuration name="AddressPhoneTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddressPhoneTests - 2017.11.09 at 09h 05m 01s.xml">
+    <history-entry file="AddressPhoneTests - 2017.11.09 at 16h 13m 05s.xml">
       <configuration name="AddressPhoneTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="GroupCreationTests - 2017.11.06 at 16h 44m 46s.xml">
-      <configuration name="GroupCreationTests" configurationId="TestNG" />
+    <history-entry file="AddressPhoneTests - 2017.11.09 at 16h 17m 06s.xml">
+      <configuration name="AddressPhoneTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="GroupCreationTests - 2017.11.06 at 17h 00m 39s.xml">
-      <configuration name="GroupCreationTests" configurationId="TestNG" />
+    <history-entry file="AddressPhoneTests - 2017.11.09 at 16h 17m 35s.xml">
+      <configuration name="AddressPhoneTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="GroupCreationTests - 2017.11.06 at 17h 02m 28s.xml">
-      <configuration name="GroupCreationTests" configurationId="TestNG" />
+    <history-entry file="AddressPhoneTests - 2017.11.09 at 20h 51m 35s.xml">
+      <configuration name="AddressPhoneTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="GroupCreationTests - 2017.11.06 at 17h 12m 16s.xml">
-      <configuration name="GroupCreationTests" configurationId="TestNG" />
+    <history-entry file="AddressPhoneTests - 2017.11.09 at 20h 52m 20s.xml">
+      <configuration name="AddressPhoneTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="GroupCreationTests - 2017.11.06 at 17h 17m 10s.xml">
-      <configuration name="GroupCreationTests" configurationId="TestNG" />
+    <history-entry file="AddressPhoneTests - 2017.11.09 at 20h 53m 07s.xml">
+      <configuration name="AddressPhoneTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="GroupCreationTests - 2017.11.06 at 17h 18m 18s.xml">
-      <configuration name="GroupCreationTests" configurationId="TestNG" />
+    <history-entry file="AddressPhoneTests - 2017.11.09 at 21h 03m 31s.xml">
+      <configuration name="AddressPhoneTests" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -1260,7 +1262,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46056783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4511041" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1654,10 +1656,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/AddressData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="109" column="16" lean-forward="false" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
+        <state relative-caret-position="711">
+          <caret line="89" column="16" lean-forward="false" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1668#1669#0" expanded="true" />
+            <element signature="e#1694#1695#0" expanded="true" />
             <element signature="e#1964#1965#0" expanded="true" />
             <element signature="e#1990#1991#0" expanded="true" />
           </folding>
@@ -1666,16 +1670,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/AddressHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="138" column="17" lean-forward="false" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="17" />
+        <state relative-caret-position="67">
+          <caret line="172" column="34" lean-forward="false" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/AddressPhoneTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="-93">
+          <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
           <folding />
         </state>
       </provider>
