@@ -34,7 +34,7 @@ public class AddressPhoneTests extends TestBase {
     assertThat(address.getAllPhones(), equalTo(mergePhones(addressInfoFromEditForm)));
     assertThat(address.getAllEmails(), equalTo(mergeEmails(addressInfoFromEditForm)));
     assertThat(cleanedPersonalAddress(address.getPersonalAddress()), equalTo(cleanedPersonalAddress((addressInfoFromEditForm.getPersonalAddress()))));
-// PONIŻEJ ZNAJDUJE SIĘ KLUCZOWA ASERCJA 
+// PONIŻEJ ZNAJDUJE SIĘ KLUCZOWA ASERCJA
     // assertThat(cleanedAllDetail(addressInfoFromDetailForm), equalTo(mergeAll(addressInfoFromEditForm)));
   }
 
