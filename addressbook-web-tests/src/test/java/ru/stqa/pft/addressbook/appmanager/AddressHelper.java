@@ -170,10 +170,20 @@ public class AddressHelper extends HelperBase {
           .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).withFaxPhone(fax).withHomepage(homepage);
   }
 
+  public String infoFromDetailForm(AddressData address){
+    initAddressDetailById(address.getId());
+    String detail = wd.findElement(By.xpath(".//*[@id='content']")).getText();
+    wd.navigate().back();
+    return detail;
+  }
+
   // to jest taka sama metoda jak editSelectedAddressById ale oj tam
   private void initAddressModificationById(int id){
     wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();
+  }
 
+  private void initAddressDetailById(int id){
+    wd.findElement(By.cssSelector(String.format("a[href='view.php?id=%s']", id))).click();
   }
 
 }

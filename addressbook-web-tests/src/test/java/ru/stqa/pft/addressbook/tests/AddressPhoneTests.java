@@ -24,7 +24,11 @@ public class AddressPhoneTests extends TestBase {
   public void testAddressPhones() {
     app.goTo().homePage();
     AddressData address = app.address().all().iterator().next();
+
     AddressData addressInfoFromEditForm = app.address().infoFromEditForm(address);
+
+    String addressInfoFromDetailForm = app.address().infoFromDetailForm(address);
+    System.out.println(addressInfoFromDetailForm);
 
     assertThat(address.getAllPhones(), equalTo(mergePhones(addressInfoFromEditForm)));
     assertThat(address.getAllEmails(), equalTo(mergeEmails(addressInfoFromEditForm)));
