@@ -30,12 +30,13 @@ public class GroupModificationTests extends TestBase{
     //tu sie wybiera grupa w losowy sposób
     GroupData modifiedGroup = before.iterator().next();
     GroupData group = new GroupData()
-            .withId(modifiedGroup.getId()).withName("patula").withHeader("czu").withFooter("pataczu");
+            .withId(modifiedGroup.getId()).withName("helena").withHeader("źdźbło").withFooter("zdziebko");
     app.goTo().groupPage();
     app.group().modify(group);
     assertThat(app.group().count(),equalTo(before.size()));
     Groups after = app.db().groups();
     assertThat(after, equalTo(before.without(modifiedGroup).withAdded(group)));
+    verityGroupListInUI();
   }
 
 
