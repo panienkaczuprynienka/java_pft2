@@ -37,7 +37,7 @@ public class AddressDeletionTests extends TestBase {
     assertEquals(after.size(), before.size()-1);
 
     assertThat(after, equalTo(before.without(deletedAddress)));
-
+    verityAddressListInUI();
   }
 
 

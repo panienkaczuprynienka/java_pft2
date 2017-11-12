@@ -38,6 +38,7 @@ public void testAddressModification(){
   assertEquals(after.size(), before.size());
 
   assertThat(after, equalTo(before.without(modifiedAddress).withAdded(address)));
+  verityAddressListInUI();
 
 }
 

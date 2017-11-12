@@ -10,6 +10,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
+import ru.stqa.pft.addressbook.model.AddressData;
+import ru.stqa.pft.addressbook.model.Addresses;
 import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
 
@@ -60,6 +62,14 @@ public class TestBase {
               .collect(Collectors.toSet())));
     }
   }
-
+  public void verityAddressListInUI() {
+    if (Boolean.getBoolean("verifyUI")) {
+      Addresses dbAddresses = app.db().addresses();
+      Addresses uiAddresses = app.address().all();
+      assertThat(uiAddresses, CoreMatchers.equalTo(dbAddresses.stream()
+              .map((a)-> new AddressData().withId(a.getId()).withFirstname(a.getFirstname()).withLastname(a.getLastname()))
+              .collect(Collectors.toSet())));
+    }
+  }
 
 }
