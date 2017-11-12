@@ -3,37 +3,72 @@ package ru.stqa.pft.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 
+@Entity
+@Table(name="addressbook")
 @XStreamAlias("addresses")
 public class AddressData {
   @XStreamOmitField
+  @Id
+  @Column(name="id")
   private int id = Integer.MAX_VALUE;
   @Expose
+  @Column(name="firstname")
   private String firstname;
+  @Column(name="middlename")
   private String middlename;
   @Expose
+  @Column(name="lastname")
   private String lastname;
+  @Column(name="nickname")
   private String nickname;
+  @Column(name="company")
   private String company;
+  @Column(name="title")
   private String title;
   @Expose
+  @Column(name="address")
+  @Type(type="text")
   private String personalAddress;
+  @Column(name="email")
+  @Type(type="text")
   private String email;
+  @Column(name="email2")
+  @Type(type="text")
   private String email2;
+  @Column(name="email3")
+  @Type(type="text")
   private String email3;
   @Expose
+  @Transient
   private String allEmails;
+  @Transient
   private String group;
+  @Column(name="home")
+  @Type(type="text")
   private String homePhone;
+  @Column(name="mobile")
+  @Type(type="text")
   private String mobilePhone;
+  @Column(name="work")
+  @Type(type="text")
   private String workPhone;
+  @Column(name="fax")
+  @Type(type="text")
   private String faxPhone;
   @Expose
+  @Transient
   private String allPhones;
+  @Column(name="homepage")
+  @Type(type="text")
   private String homepage;
-  private File photo;
+  @Column(name="photo")
+  @Type(type="text")
+  private String photo;
 
   public String getMiddlename() {
     return middlename;
@@ -112,7 +147,7 @@ public class AddressData {
   }
 
   public File getPhoto() {
-    return photo;
+    return new File (photo);
   }
 
   public AddressData withMiddlename(String middlename) {
@@ -211,7 +246,7 @@ public class AddressData {
   }
 
   public AddressData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
 
