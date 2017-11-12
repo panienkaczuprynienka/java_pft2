@@ -18,8 +18,8 @@ public class AddressModificationTests extends TestBase {
 
 @BeforeMethod
 public void ensurePreconditions(){
-  app.goTo().homePage();
-  if (app.address().all().size()==0){
+  if(app.db().addresses().size()==0){
+    app.goTo().homePage();
     app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot").withPersonalAddress("hk@wp.pl").withGroup("jep")), true);
   }
 }
@@ -27,13 +27,14 @@ public void ensurePreconditions(){
 @Test
 public void testAddressModification(){
 
-  Addresses before = app.address().all();
+  Addresses before = app.db().addresses();
   // wybieranie ktoregos elementu ze zbioru
   AddressData modifiedAddress = before.iterator().next();
   AddressData address = new AddressData()
           .withId(modifiedAddress.getId()).withFirstname("Żulana").withLastname("Huk").withPersonalAddress("hm@wp.pl");
+  app.goTo().homePage();
   app.address().modify(address);
-  Addresses after = app.address().all();
+  Addresses after = app.db().addresses();
   assertEquals(after.size(), before.size());
 
   assertThat(after, equalTo(before.without(modifiedAddress).withAdded(address)));

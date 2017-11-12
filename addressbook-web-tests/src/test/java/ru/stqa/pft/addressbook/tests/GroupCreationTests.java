@@ -65,6 +65,9 @@ public class GroupCreationTests extends TestBase {
   }
 
 
+
+
+
   @Test(enabled = false)
   public void testBadGroupCreation() {
     app.goTo().groupPage();
@@ -75,7 +78,7 @@ public class GroupCreationTests extends TestBase {
     Groups after = app.group().all();
 
     assertThat(after, equalTo(before));
+
+
   }
-
-
 }

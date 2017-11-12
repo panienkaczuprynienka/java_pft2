@@ -146,8 +146,13 @@ public class AddressData {
     return allPhones;
   }
 
+
   public File getPhoto() {
-    return new File (photo);
+    if (photo == null) {
+      return null;
+    } else {
+      return new File(photo);
+    }
   }
 
   public AddressData withMiddlename(String middlename) {

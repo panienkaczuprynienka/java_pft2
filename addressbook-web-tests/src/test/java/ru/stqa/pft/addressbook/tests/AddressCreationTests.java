@@ -59,9 +59,9 @@ public class AddressCreationTests extends TestBase {
   @Test(dataProvider = "validAddressesFromXml")
   public void testAddressCreation(AddressData address) {
     app.goTo().homePage();
-    Addresses before = app.address().all();
+    Addresses before = app.db().addresses();
     app.address().create((address), true);
-    Addresses after = app.address().all();
+    Addresses after = app.db().addresses();
     assertThat(after.size(), equalTo(before.size() + 1));
 
     assertThat(after, equalTo(

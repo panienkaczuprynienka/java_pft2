@@ -22,7 +22,6 @@ public class GroupModificationTests extends TestBase{
       app.goTo().groupPage();
       app.group().create(new GroupData().withName("test1"));
     }
-
   }
 
   @Test

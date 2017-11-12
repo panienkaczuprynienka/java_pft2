@@ -18,21 +18,22 @@ public class AddressDeletionTests extends TestBase {
 
   @BeforeMethod
   public void ensurePreconditions() {
-    app.goTo().homePage();
-    if (app.address().all().size()==0) {
+    if(app.db().addresses().size()==0){
+      app.goTo().homePage();
       app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot").withPersonalAddress("hk@wp.pl").withGroup("jep")), true);
     }
   }
 
   @Test
   public void testAddressDeletion() {
-    Addresses before = app.address().all();
+    Addresses before = app.db().addresses();
     //zwracanie poierwszego znalezionego elementu zbioru
     AddressData deletedAddress = before.iterator().next();
     int index = before.size()-1;
+    app.goTo().homePage();
     app.address().delete(deletedAddress);
     app.goTo().homePage();
-    Addresses after = app.address().all();
+    Addresses after = app.db().addresses();
     assertEquals(after.size(), before.size()-1);
 
     assertThat(after, equalTo(before.without(deletedAddress)));
