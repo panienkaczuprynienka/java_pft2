@@ -5,10 +5,9 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="group_list")
@@ -25,6 +24,11 @@ public class GroupData {
   @Type(type="text")
   @Column(name="group_header")
   private String header;
+
+@ManyToMany(mappedBy = "groups")
+  private Set<AddressData> addresses = new HashSet<AddressData>();
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -77,6 +81,10 @@ public class GroupData {
   public GroupData withFooter(String footer) {
     this.footer = footer;
     return this;
+  }
+
+  public Set<AddressData> getAddresses() {
+    return new Addresses(addresses);
   }
 
   public String getName() {

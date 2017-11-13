@@ -40,11 +40,14 @@ public class HbConnectionTest {
     Session session = sessionFactory.openSession();
     session.beginTransaction();
     List<AddressData> result = session.createQuery( "from AddressData where deprecated='0000-00-00'").list();
-    for (AddressData address : result) {
-      System.out.println(address);
-    }
+
     session.getTransaction().commit();
     session.close();
+
+    for (AddressData address : result) {
+      System.out.println(address);
+      System.out.println(address.getGroups());
+    }
   }
 
 }

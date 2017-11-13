@@ -16,7 +16,7 @@ public class AddressPhoneTests extends TestBase {
   public void ensurePreconditions() {
     app.goTo().homePage();
     if (app.address().all().size() == 0) {
-      app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot").withPersonalAddress("hk@wp.pl").withGroup("jep")), true);
+      app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot").withPersonalAddress("hk@wp.pl")), true);
     }
   }
 

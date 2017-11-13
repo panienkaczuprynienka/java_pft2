@@ -20,7 +20,7 @@ public class AddressDeletionTests extends TestBase {
   public void ensurePreconditions() {
     if(app.db().addresses().size()==0){
       app.goTo().homePage();
-      app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot").withPersonalAddress("hk@wp.pl").withGroup("jep")), true);
+      app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot").withPersonalAddress("hk@wp.pl")), true);
     }
   }
 
