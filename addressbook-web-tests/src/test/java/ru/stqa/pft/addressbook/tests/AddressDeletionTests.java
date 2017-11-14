@@ -1,14 +1,9 @@
 package ru.stqa.pft.addressbook.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 import ru.stqa.pft.addressbook.model.Addresses;
-
-import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -37,7 +32,7 @@ public class AddressDeletionTests extends TestBase {
     assertEquals(after.size(), before.size()-1);
 
     assertThat(after, equalTo(before.without(deletedAddress)));
-    verityAddressListInUI();
+    verifyAddressListInUI();
   }
 
 

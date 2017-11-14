@@ -66,7 +66,7 @@ public class AddressCreationTests extends TestBase {
 
     assertThat(after, equalTo(
             before.withAdded(address.withId(after.stream().mapToInt((a) -> a.getId()).max().getAsInt()))));
-    verityAddressListInUI();
+    verifyAddressListInUI();
   }
 
 

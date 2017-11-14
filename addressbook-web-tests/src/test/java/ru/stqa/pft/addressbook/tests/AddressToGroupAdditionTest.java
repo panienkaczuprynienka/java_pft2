@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 import ru.stqa.pft.addressbook.model.Addresses;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
@@ -16,7 +17,15 @@ public class AddressToGroupAdditionTest extends TestBase {
       app.goTo().homePage();
       app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot").withPersonalAddress("hk@wp.pl")), true);
     }
+
+    if(app.db().groups().size()==0){
+      app.goTo().groupPage();
+      app.group().create(new GroupData().withName("grupa1"));
+    }
   }
+
+
+
 
   @Test
   public void testAddressToGroupAddition() {
@@ -46,7 +55,8 @@ public class AddressToGroupAdditionTest extends TestBase {
     System.out.println(after.size());
 
     assertThat(before.size(), equalTo(after.size()));
-
+    verifyGroupListInUI();
+    verifyAddressListInUI();
   }
 
 

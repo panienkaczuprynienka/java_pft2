@@ -1,14 +1,9 @@
 package ru.stqa.pft.addressbook.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 import ru.stqa.pft.addressbook.model.Addresses;
-
-import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
@@ -38,7 +33,7 @@ public void testAddressModification(){
   assertEquals(after.size(), before.size());
 
   assertThat(after, equalTo(before.without(modifiedAddress).withAdded(address)));
-  verityAddressListInUI();
+  verifyAddressListInUI();
 
 }
 

@@ -203,6 +203,19 @@ public class AddressHelper extends HelperBase {
 
   }
 
+  public void remove(AddressData address) {
+    selectAddressById(address.getId());
+    chooseSelectedAddress(address.getId());
+    //expandDropDownList();
+    //selectGroupByName();
+    removeAddress();
+
+  }
+
+  private void removeAddress() {
+    wd.findElement(By.name("remove")).click();
+  }
+
   private void addAddress(){
     wd.findElement(By.name("add")).click();
   }
@@ -230,6 +243,7 @@ public class AddressHelper extends HelperBase {
     expandTopDropdownList();
     wd.findElement(By.xpath("//form[@id='right']/select//option[1]")).click();
   }
+
 
 
 }

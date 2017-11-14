@@ -19,6 +19,7 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TestBase {
@@ -53,20 +54,20 @@ public class TestBase {
     return app;
   }
 
-  public void verityGroupListInUI() {
+  public void verifyGroupListInUI() {
     if (Boolean.getBoolean("verifyUI")) {
       Groups dbGroups = app.db().groups();
       Groups uiGroups = app.group().all();
-      assertThat(uiGroups, CoreMatchers.equalTo(dbGroups.stream()
+      assertThat(uiGroups, equalTo(dbGroups.stream()
               .map((g)-> new GroupData().withId(g.getId()).withName(g.getName()))
               .collect(Collectors.toSet())));
     }
   }
-  public void verityAddressListInUI() {
+  public void verifyAddressListInUI() {
     if (Boolean.getBoolean("verifyUI")) {
       Addresses dbAddresses = app.db().addresses();
       Addresses uiAddresses = app.address().all();
-      assertThat(uiAddresses, CoreMatchers.equalTo(dbAddresses.stream()
+      assertThat(uiAddresses, equalTo(dbAddresses.stream()
               .map((a)-> new AddressData().withId(a.getId()).withFirstname(a.getFirstname()).withLastname(a.getLastname()))
               .collect(Collectors.toSet())));
     }
