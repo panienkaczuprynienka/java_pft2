@@ -25,4 +25,8 @@ public class NavigationHelper extends HelperBase {
     } else click(By.linkText("home"));
   }
 
+
+  public void mainPage() {
+    wd.findElement(By.id("logo")).click();
+  }
 }

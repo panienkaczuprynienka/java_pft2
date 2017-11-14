@@ -186,5 +186,51 @@ public class AddressHelper extends HelperBase {
     wd.findElement(By.cssSelector(String.format("a[href='view.php?id=%s']", id))).click();
   }
 
+  public void move(AddressData address) {
+    selectAddressById(address.getId());
+    chooseSelectedAddress(address.getId());
+    //expandDropDownList();
+    //selectGroupByName();
+    addAddress();
+
+  }
+
+  private void chooseSelectedAddress(int id) {
+    if (!wd.findElement(By.id(String.format(("%s"), id))).isSelected()) {
+      wd.findElement(By.id(String.format(("%s"), id))).click();
+    }
+    //wd.findElement(By.cssSelector(String.format(".//*[@id='%s']", id))).click();
+
+  }
+
+  private void addAddress(){
+    wd.findElement(By.name("add")).click();
+  }
+
+  private void expandDropDownList(){
+    wd.findElement(By.name("to_group")).click();
+  }
+
+
+  public void goToLastGroupPage() {
+    wd.findElement(By.linkText("group page \"grupa1\"")).click();
+  }
+
+  public void expandTopDropdownList() {
+    wd.findElement(By.name("group")).click();
+    //wd.findElement(By.id("right"));
+  }
+
+  public void chooseTargetGroup() {
+    expandTopDropdownList();
+    wd.findElement(By.xpath("//form[@id='right']/select//option[3]")).click();
+  }
+
+  public void chooseAllInGroups() {
+    expandTopDropdownList();
+    wd.findElement(By.xpath("//form[@id='right']/select//option[1]")).click();
+  }
+
+
 }
 
