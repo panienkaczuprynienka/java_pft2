@@ -3,10 +3,13 @@ package ru.stqa.pft.addressbook.tests;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 import ru.stqa.pft.addressbook.model.Addresses;
+import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 
 
 import java.io.BufferedReader;
@@ -55,12 +58,25 @@ public class AddressCreationTests extends TestBase {
     }
   }
 
+  // jesli chchec korzystac z dtata providera to trzeba takie cos dopisac po zapisku test (dataProvider = "validAddressesFromXml")
 
-  @Test(dataProvider = "validAddressesFromXml")
+  @BeforeMethod
+  public void ensurePreconditions(){
+    if(app.db().groups().size()==0){
+      app.goTo().groupPage();
+      app.group().create(new GroupData().withName("test1"));
+    }
+  }
+
+  @Test
   public void testAddressCreation(AddressData address) {
+    Groups groups = app.db().groups();
+    File photo = new File("src/test/resources/fotografia.png");
+    AddressData newAddress = new AddressData().withFirstname("imie").withLastname("nazwisko")
+            .withPhoto(photo).inGroup(groups.iterator().next());
     app.goTo().homePage();
     Addresses before = app.db().addresses();
-    app.address().create((address), true);
+    app.address().create((newAddress), true);
     Addresses after = app.db().addresses();
     assertThat(after.size(), equalTo(before.size() + 1));
 

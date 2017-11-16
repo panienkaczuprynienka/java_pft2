@@ -287,4 +287,8 @@ public class AddressData {
             '}';
   }
 
+  public AddressData inGroup(GroupData group) {
+    groups.add(group);
+    return this;
+  }
 }

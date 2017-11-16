@@ -4,6 +4,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.AddressData;
 import ru.stqa.pft.addressbook.model.Addresses;
+import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -12,10 +14,19 @@ public class AddressFromGroupRemovalTest extends TestBase {
 
   @BeforeMethod
   public void ensurePreconditions() {
-    if (app.db().addresses().size() == 0) {
-      app.goTo().homePage();
-      app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot").withPersonalAddress("hk@wp.pl")), true);
+
+    if(app.db().groups().size()==0){
+      app.goTo().groupPage();
+      app.group().create(new GroupData().withName("grupa1"));
     }
+
+    if (app.db().addresses().size() == 0) {
+      Groups groups = app.db().groups();
+      app.goTo().homePage();
+      app.address().create((new AddressData().withFirstname("Henek").withLastname("Kot")
+              .withPersonalAddress("hk@wp.pl").inGroup(groups.iterator().next())), true);
+    }
+
   }
 
 
