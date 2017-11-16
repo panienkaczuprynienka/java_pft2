@@ -55,6 +55,9 @@ public class AddressFromGroupRemovalTest extends TestBase {
     assertThat(beforeRemoval.size(), equalTo(afterRemoval.size() + 1));
     assertThat(before.size(), equalTo(after.size()));
 
+    verifyGroupListInUI();
+    verifyAddressListInUI();
+
 
 
   }
