@@ -27,6 +27,15 @@ public class AddressFromGroupRemovalTest extends TestBase {
               .withPersonalAddress("hk@wp.pl").inGroup(groups.iterator().next())), true);
     }
 
+    if (app.db().addresses().size() > 0){
+      app.goTo().mainPage();
+      Addresses before = app.address().all();
+      AddressData addedAddressToGroup = before.iterator().next();
+      app.address().move(addedAddressToGroup);
+    }
+
+
+
   }
 
 
@@ -55,8 +64,9 @@ public class AddressFromGroupRemovalTest extends TestBase {
     assertThat(beforeRemoval.size(), equalTo(afterRemoval.size() + 1));
     assertThat(before.size(), equalTo(after.size()));
 
-    verifyGroupListInUI();
-    verifyAddressListInUI();
+    app.goTo().mainPage();
+    app.address().chooseTargetGroup();
+    //verifyAddressListInUI();
 
 
 

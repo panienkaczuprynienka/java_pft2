@@ -55,8 +55,9 @@ public class AddressToGroupAdditionTest extends TestBase {
     System.out.println(after.size());
 
     assertThat(before.size(), equalTo(after.size()));
-    verifyGroupListInUI();
-    verifyAddressListInUI();
+    app.goTo().mainPage();
+    app.address().chooseTargetGroup();
+    //verifyAddressListInUI();
   }
 
 
