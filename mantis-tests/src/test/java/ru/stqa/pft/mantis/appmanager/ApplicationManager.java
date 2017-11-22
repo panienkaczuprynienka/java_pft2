@@ -6,6 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
+import java.util.Objects;
 
 import java.io.File;
 import java.io.FileReader;
@@ -19,8 +20,8 @@ public class ApplicationManager {
   private String browser;
   private RegistrationHelper registrationHelper;
   private FtpHelper ftp;
-  public WebDriver getDriver;
   private MailHelper mailHelper;
+  private JamesHelper jamesHelper;
 
 
   public ApplicationManager(String browser) {
@@ -64,14 +65,13 @@ public class ApplicationManager {
 
   public WebDriver getDriver() {
     if (wd == null) {
-      if (browser.equals(BrowserType.FIREFOX)) {
+      if (Objects.equals(browser, BrowserType.FIREFOX)) {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
-      } else if (browser.equals(BrowserType.CHROME)) {
+      } else if (Objects.equals(browser, BrowserType.CHROME)) {
         wd = new ChromeDriver();
-      } else if (browser.equals(BrowserType.IE)) {
+      } else if (Objects.equals(browser, BrowserType.IE)) {
         wd = new InternetExplorerDriver();
       }
-
       wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
       wd.get(properties.getProperty("web.baseUrl"));
 
@@ -86,5 +86,13 @@ public class ApplicationManager {
     }
     return mailHelper;
   }
+
+    public JamesHelper james(){
+        if (jamesHelper == null){
+            jamesHelper = new JamesHelper(this);
+          }
+        return jamesHelper;
+      }
+
 
 }
