@@ -1,7 +1,6 @@
 package ru.stqa.pft.mantis.appmanager;
 
 import org.apache.commons.net.telnet.TelnetClient;
-import org.openqa.selenium.interactions.SourceType;
 import ru.stqa.pft.mantis.model.MailMessage;
 
 import javax.mail.*;
@@ -34,7 +33,7 @@ public class JamesHelper {
     initTelnetSession();
     write("verify " + name);
     String result = readUntil("exist");
-    clouseTelnetSession();
+    closeTelnetSession();
     return result.trim().equals("User " + name + " exist");
   }
 
@@ -42,17 +41,17 @@ public class JamesHelper {
     initTelnetSession();
     write("adduser " + name + " " + password);
     String result = readUntil("User" + name + " added");
-    clouseTelnetSession();
+    closeTelnetSession();
   }
 
   public void deleteUser(String name) {
     initTelnetSession();
-    write("deleteuser " + name);
-    String result = readUntil("User" + name + " deleted");
-    clouseTelnetSession();
+    write("deluser " + name);
+    String result = readUntil("User " + name + " deleted");
+    closeTelnetSession();
   }
 
-  public void initTelnetSession() {
+  private void initTelnetSession() {
     mailserver = app.getProperty("mailserver.host");
     int port = Integer.parseInt(app.getProperty("mailserver.port"));
     String login = app.getProperty("mailserver.adminlogin");
@@ -88,7 +87,7 @@ public class JamesHelper {
       StringBuffer sb = new StringBuffer();
       char ch = (char) in.read();
       while (true) {
-        System.out.println(ch);
+        System.out.print(ch);
         sb.append(ch);
         if (ch == lastChar) {
           if (sb.toString().endsWith(pattern)) {
@@ -113,7 +112,7 @@ public class JamesHelper {
     }
   }
 
-  private void clouseTelnetSession() {
+  private void closeTelnetSession() {
     write("quit");
   }
 
