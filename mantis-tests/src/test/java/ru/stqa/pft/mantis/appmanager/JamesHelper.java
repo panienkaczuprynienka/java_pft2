@@ -37,10 +37,10 @@ public class JamesHelper {
     return result.trim().equals("User " + name + " exist");
   }
 
-  public void createUser(String name, String password) {
+  public void createUser(String name, String passwd) {
     initTelnetSession();
-    write("adduser " + name + " " + password);
-    String result = readUntil("User" + name + " added");
+    write("adduser " + name + " " + passwd);
+    String result = readUntil("User " + name + " added");
     closeTelnetSession();
   }
 
@@ -78,7 +78,7 @@ public class JamesHelper {
     write(password);
 
 
-    readUntil("Welcome " + login + " HELP for a list commands");
+    readUntil("Welcome " + login + ". HELP for a list of commands");
   }
 
   private String readUntil(String pattern) {
