@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.sandbox.EquationTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2017-12-01T08:59:59" hostname="DESKTOP-O2K9941" time="0.015">
+<testsuite name="ru.stqa.pft.sandbox.EquationTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2017-12-01T09:29:10" hostname="DESKTOP-O2K9941" time="0.015">
   <properties/>
   <testcase name="test0" classname="ru.stqa.pft.sandbox.EquationTests" time="0.0"/>
   <testcase name="test1" classname="ru.stqa.pft.sandbox.EquationTests" time="0.0"/>
