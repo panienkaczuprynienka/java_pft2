@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class AddressPhoneTests extends TestBase {
 
@@ -33,21 +33,23 @@ public class AddressPhoneTests extends TestBase {
 
     assertThat(address.getAllPhones(), equalTo(mergePhones(addressInfoFromEditForm)));
     assertThat(address.getAllEmails(), equalTo(mergeEmails(addressInfoFromEditForm)));
-    assertThat(cleanedPersonalAddress(address.getPersonalAddress()), equalTo(cleanedPersonalAddress((addressInfoFromEditForm.getPersonalAddress()))));
+    assertThat(cleanedPersonalAddress(address.getPersonalAddress()),
+            equalTo(cleanedPersonalAddress((addressInfoFromEditForm.getPersonalAddress()))));
 // PONIŻEJ ZNAJDUJE SIĘ KLUCZOWA ASERCJA
-    // assertThat(cleanedAllDetail(addressInfoFromDetailForm), equalTo(mergeAll(addressInfoFromEditForm)));
+     assertThat(cleanedAllDetail(addressInfoFromDetailForm), equalTo(mergeAll(addressInfoFromEditForm)));
+
   }
 
   private String mergeAll(AddressData address) {
     return Arrays.asList(address.getFirstname(), address.getMiddlename(), address.getLastname(), address.getNickname(),
             address.getTitle(), address.getCompany(),
             address.getPersonalAddress(),
-            address.getHomePhone(), address.getMobilePhone(), address.getWorkPhone(), address.getFaxPhone(),
+            "H:",address.getHomePhone(),"M:", address.getMobilePhone(),"W:", address.getWorkPhone(),"F:", address.getFaxPhone(),
             address.getEmail(), address.getEmail2(), address.getEmail3(),
-            address.getHomepage())
+            "Homepage:", address.getHomepage())
             .stream().filter((s) -> s != null && !s.equals(""))
             .map(AddressPhoneTests::cleanedAllEdit)
-            .collect(Collectors.joining("\n"));
+            .collect(Collectors.joining(" "));
 
   }
 
@@ -67,7 +69,7 @@ public class AddressPhoneTests extends TestBase {
 
 
   public static String cleanedPersonalAddress(String personalAddress) {
-    return personalAddress.replaceAll("\\s", "").replaceAll("\\n", "");
+    return personalAddress.replaceAll("\\s", "").replaceAll("\\n", " ");
   }
 
   // OCZYSZCZANIE DANYCH Z EDIT FORM
@@ -77,7 +79,7 @@ public class AddressPhoneTests extends TestBase {
 
   // OCZYSZCZANIE DANYCH Z DETAIL FORM
   public static String cleanedAllDetail(String addressInfoFromDetailForm) {
-    return addressInfoFromDetailForm.replaceAll("\\s", " ").replaceAll("\\n", " ");
+    return addressInfoFromDetailForm.replaceAll("\\s{1,}", " ");
   }
   public static String cleanedPhones(String phone) {
 
