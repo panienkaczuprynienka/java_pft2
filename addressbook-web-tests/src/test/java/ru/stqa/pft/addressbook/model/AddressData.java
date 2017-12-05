@@ -291,4 +291,37 @@ public class AddressData {
     groups.add(group);
     return this;
   }
+
+
+  public String getHomePhoneIfPresent() {
+    if (homePhone != null && !homePhone.equals("")){
+      return "H: "+homePhone;
+    }else return null;
+  }
+
+
+  public String getMobilePhoneIfPresent() {
+    if (mobilePhone != null && !mobilePhone.equals("")){
+      return "M: "+mobilePhone;
+    }else return null;
+  }
+
+  public String getWorkPhoneIfPresent() {
+    if (workPhone != null && !workPhone.equals("")){
+      return "W: "+workPhone;
+    }else return null;
+  }
+
+  public String getFaxPhoneIfPresent() {
+    if (faxPhone != null && !faxPhone.equals("")){
+      return "F: "+faxPhone;
+    }else return null;
+  }
+
+  public String getHomepageIfPresent() {
+    if (homepage != null && !homepage.equals("")){
+      return "Homepage: "+homepage;
+    }else return null;
+  }
+
 }

@@ -44,9 +44,9 @@ public class AddressPhoneTests extends TestBase {
     return Arrays.asList(address.getFirstname(), address.getMiddlename(), address.getLastname(), address.getNickname(),
             address.getTitle(), address.getCompany(),
             address.getPersonalAddress(),
-            "H:",address.getHomePhone(),"M:", address.getMobilePhone(),"W:", address.getWorkPhone(),"F:", address.getFaxPhone(),
+            address.getHomePhoneIfPresent(), address.getMobilePhoneIfPresent(), address.getWorkPhoneIfPresent(), address.getFaxPhoneIfPresent(),
             address.getEmail(), address.getEmail2(), address.getEmail3(),
-            "Homepage:", address.getHomepage())
+            address.getHomepageIfPresent())
             .stream().filter((s) -> s != null && !s.equals(""))
             .map(AddressPhoneTests::cleanedAllEdit)
             .collect(Collectors.joining(" "));
