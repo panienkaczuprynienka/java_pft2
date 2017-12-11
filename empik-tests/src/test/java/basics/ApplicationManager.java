@@ -54,10 +54,12 @@ public class ApplicationManager {
     wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
     wd.get(properties.getProperty("web.baseUrl"));
 
+    wd.get("http://www.empik.com/");
+    logIn("OlimpiaZak@vp.pl", "Olimpia1");
+
     }
 
   public void logIn(String username, String password) {
-    wd.get("http://www.empik.com/");
     wd.findElement(By.id("simple-dropdown2")).click();
     wd.findElement(By.name("j_username")).click();
     wd.findElement(By.name("j_username")).clear();
